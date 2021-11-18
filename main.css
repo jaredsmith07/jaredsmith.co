@@ -643,7 +643,7 @@ header {
     transform: translate(-50%, -50%);
     width: auto;
     max-width: none;
-    height: 212vw;
+    height: 204vh;
     animation: starRotation 300s infinite linear;
     transform-origin: top left; }
     @media (orientation: landscape) {
