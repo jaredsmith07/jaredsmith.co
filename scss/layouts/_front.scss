@@ -457,9 +457,6 @@
         justify-content: center;
         text-decoration: none;
         color: white;
-        &:hover {
-            color: #3FFBBD;
-        }
         @media only screen and (min-width: $tablet) {
             justify-content: flex-start;
         }
@@ -469,6 +466,11 @@
         svg.icon--external-link {
             @include fluidSize(width, 8px, 12px);
             margin-top: 4px;
+        }
+    }
+    a.portfolio__heading {
+        &:hover {
+            color: #3FFBBD;
         }
     }
     .subheading {
@@ -510,10 +512,12 @@
     }
     .tag {
         border-radius: 50px;
-        padding: 0px 8px;
+        padding: 1px 12px;
         color: $white;
         margin-right: 12px;
-        @include fluidSize(font-size, 10px, 14px);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @include fluidSize(font-size, 8px, 10px);
     }
     .tag--design {
         color: $primary-color;
@@ -544,4 +548,7 @@
 
 footer {
     text-align: center;
+    p {
+        @include fluidSize(font-size, 10px, 12px);
+    }
 }

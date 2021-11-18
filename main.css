@@ -1035,8 +1035,6 @@ header {
     justify-content: center;
     text-decoration: none;
     color: white; }
-    .portfolio__item .portfolio__heading:hover {
-      color: #3FFBBD; }
     @media only screen and (min-width: 768px) {
       .portfolio__item .portfolio__heading {
         justify-content: flex-start; } }
@@ -1048,6 +1046,8 @@ header {
       @media only screen and (min-width: 1800px) {
         .portfolio__item .portfolio__heading svg.icon--external-link {
           width: calc(8px + 4 * ((1800px - 320px) / 830)); } }
+  .portfolio__item a.portfolio__heading:hover {
+    color: #3FFBBD; }
   .portfolio__item .subheading {
     margin-top: 0;
     font-weight: 700;
@@ -1094,13 +1094,15 @@ header {
       justify-content: flex-start; } }
   .portfolio__tags .tag {
     border-radius: 50px;
-    padding: 0px 8px;
+    padding: 1px 12px;
     color: #ffffff;
     margin-right: 12px;
-    font-size: calc(10px + 4 * ((100vw - 320px) / 830)); }
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: calc(8px + 2 * ((100vw - 320px) / 830)); }
     @media only screen and (min-width: 1800px) {
       .portfolio__tags .tag {
-        font-size: calc(10px + 4 * ((1800px - 320px) / 830)); } }
+        font-size: calc(8px + 2 * ((1800px - 320px) / 830)); } }
   .portfolio__tags .tag--design {
     color: #3FE5F7;
     border: solid 1px #3FE5F7; }
@@ -1132,5 +1134,10 @@ header {
 
 footer {
   text-align: center; }
+  footer p {
+    font-size: calc(10px + 2 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      footer p {
+        font-size: calc(10px + 2 * ((1800px - 320px) / 830)); } }
 
 /*# sourceMappingURL=main.css.map */
