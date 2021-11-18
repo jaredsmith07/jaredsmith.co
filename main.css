@@ -1067,6 +1067,11 @@ header {
     .portfolio__item:nth-child(even) .portfolio__content {
       margin-right: calc(24px + 12 * ((1800px - 320px) / 830)); } }
 
+  .portfolio__item:nth-child(even) .gallery__center .center__wrap {
+    transform: rotate(5deg); }
+    .portfolio__item:nth-child(even) .gallery__center .center__wrap:hover {
+      transform: rotate(0deg); }
+
 .portfolio__content {
   order: 3;
   text-align: center;
@@ -1136,11 +1141,10 @@ header {
     transform: rotate(-5deg); }
     .gallery__center .center__wrap:hover {
       border-radius: 5%;
-      transform: rotate(5deg); }
+      transform: rotate(0deg); }
       .gallery__center .center__wrap:hover img {
         border-radius: 5%; }
   .gallery__center img {
-    border: solid 3px #101522;
     border-radius: 50%;
     display: block;
     transition: all ease-in-out 0.25s; }
