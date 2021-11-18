@@ -1058,13 +1058,14 @@ header {
     @media only screen and (min-width: 1800px) {
       .portfolio__item .subheading {
         font-size: calc(12px + 4 * ((1800px - 320px) / 830)); } }
-  .portfolio__item:nth-child(even) .portfolio__content {
-    order: 1;
-    margin: 0;
-    margin-right: calc(24px + 12 * ((100vw - 320px) / 830)); }
-    @media only screen and (min-width: 1800px) {
-      .portfolio__item:nth-child(even) .portfolio__content {
-        margin-right: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) {
+    .portfolio__item:nth-child(even) .portfolio__content {
+      order: 1;
+      margin: 0;
+      margin-right: calc(24px + 12 * ((100vw - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) and (min-width: 1800px) {
+    .portfolio__item:nth-child(even) .portfolio__content {
+      margin-right: calc(24px + 12 * ((1800px - 320px) / 830)); } }
 
 .portfolio__content {
   order: 3;

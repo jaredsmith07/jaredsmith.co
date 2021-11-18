@@ -483,10 +483,12 @@
     }
 
     &:nth-child(even) {
-        .portfolio__content {
-            order: 1;
-            margin: 0;
-            @include fluidSize(margin-right, 24px, 36px);
+        .portfolio__content {  
+            @media only screen and (min-width: $tablet) {
+                order: 1;
+                margin: 0;
+                @include fluidSize(margin-right, 24px, 36px);
+            }
         }
     }
 }
