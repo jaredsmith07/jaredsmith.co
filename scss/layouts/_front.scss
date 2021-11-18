@@ -538,14 +538,23 @@
         padding: 0;
     }
     .center__wrap {
-        border: solid 1px $white;
+        border: solid 2px $white;
         border-radius: 50%;
+        box-shadow: 0 0 96px 0 #404a66;
+        transition: all ease-in-out 0.25s;
+        transform: rotate(-5deg);
+        &:hover {
+            border-radius: 5%;
+            transform: rotate(5deg);
+            img {
+                border-radius: 5%;
+            }
+        }
     }
     img {
-        border: solid 5px $black-d;
+        border: solid 6px $black-d;
         border-radius: 50%;
         display: block;
-        box-shadow: 0 0 96px 0 #404a66;
     }
 }
 
