@@ -1,0 +1,293 @@
+// Global Styles
+// ================================================================================
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    max-width: 100% !important;
+    height: 100%;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    font-size: 8px;
+    @media only screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
+  }
+  
+  body {
+    font-family: $primary-font;
+    @include fluidSize(font-size, 14px, 18px);
+    @include fluidSize(line-height, 22px, 28px);
+    color: $white;
+    background: $black-d;
+  
+    &.modal-open {
+      overflow: hidden;
+    }
+  }
+  
+  header,
+  section,
+  footer {
+    overflow: visible;
+  }
+  
+  section {
+    @include fluidSize(padding-top, $s10, $s16);
+    @include fluidSize(padding-bottom, $s10, $s16);
+  }
+  
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .container {
+    margin: 0 calc(12px + 5vw);
+    width: calc(100% - (24px + 10vw));
+    padding: 0;
+    max-width: none;
+  
+    @media only screen and (min-width: $tablet) {
+      margin: 0 auto;
+      @include fluidSize(max-width, 768px, $container-size);
+    }
+  }
+  
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .screen-reader-text {
+    @include hide();
+  }
+  
+  
+  
+  // Typography
+  // --------------------------------------------------------------------------------
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: $line-spacing;
+    margin-bottom: $line-spacing;
+    mix-blend-mode: exclusion;
+  }
+  
+  h1 {
+    @include fluidSize(font-size, $s6, $s10);
+    line-height: 1.2;
+  }
+  
+  h2 {
+    @include fluidSize(font-size, $s3, $s5);
+    line-height: 1.4;
+  }
+  
+  h3 {
+    @include fluidSize(font-size, 18px, 20px);
+  }
+  
+  h4 {
+    @include fluidSize(font-size, 14px, 18px);
+  }
+  
+  h5 {
+    @include fluidSize(font-size, 14px, 16px);
+  }
+  
+  h6 {
+    @include fluidSize(font-size, 12px, 16px);
+  }
+  
+  p, li {
+    @include fluidSize(font-size, 14px, 18px);
+    line-height: 1.6;
+    margin-top: $line-spacing;
+    margin-bottom: $line-spacing;
+    font-weight: 500;
+    mix-blend-mode: exclusion;
+    a {
+      @include fluidSize(font-size, 12px, 16px);
+    }
+  }
+  
+  li {
+    @include fluidSize(font-size, 12px, 16px);
+    line-height: 1.6;
+    margin-top: calc(#{$line-spacing} / 2);
+    margin-bottom: calc(#{$line-spacing} / 2);
+    font-weight: 500;
+  }
+  
+  p.sidetext {
+    @include fluidSize(font-size, 8px, 10px);
+    display: block;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  p.lead-text {
+    @include fluidSize(font-size, 20px, 24px);
+    line-height: 1.4;
+    a {
+      @include fluidSize(font-size, 20px, 24px);
+    }
+  }
+  
+  p.small-text {
+    @include fluidSize(font-size, 8px, 10px);
+    margin: 0;
+  }
+  
+  a {
+    // @include fluidSize(font-size, 14px, 18px);
+    color: $primary-color;
+    font-weight: 700;
+    transition: color ease-in-out 0.25s;
+  
+    &:hover {
+      // color: $primary-color-d; 
+      color: #3FFBBD;
+    }
+  
+    &.text-link {
+      @include fluidSize(font-size, 11px, 14px);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      line-height: 2em;
+      white-space: nowrap;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 0.2em);
+        height: 2px;
+        background: $primary-color;
+      } 
+      &:hover:after {
+        background: $primary-color-d;
+      }
+    }
+  }
+  
+  ul {
+    list-style: square;
+  }
+  
+  ::selection {
+    background: $black;
+    color: $grey-l
+  }
+  ::-moz-selection {
+    background: $black;
+    color: $grey-l
+  }
+  
+  
+  // Social Icon List
+  // --------------------------------------------------------------------------------
+  .social-icon-list {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    line-height: 0;
+    margin: 0 calc(#{$line-spacing} * -0.25);
+    a {
+        display: block;
+        margin: 0 calc(#{$line-spacing} * 0.25);
+        width: 42px;
+        height: 42px;
+        position: relative;
+        border: solid $border-thickness $black;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            background: $black;
+            svg path {
+                fill: $white;
+            }
+        }
+    }
+    P {
+        @include hide();
+    }
+  }
+  
+  
+  // Modal
+  // --------------------------------------------------------------------------------
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.5);
+    transition: all ease-in-out 0.25s;
+    z-index: -999;
+    opacity: 0;
+  
+    &.modal--open {
+      z-index: 999;
+      opacity: 1;
+      display: block;
+    }
+  
+    .modal__inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      max-width: 720px;
+      max-height: 90vh;
+      transform: translate(-50%, -50%);
+      background: $white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px 0 rgba($black, 0.75);
+      @include fluidSize(padding, 16px, 32px);
+    }
+  
+    .modal__close {
+      position: absolute;
+      top: 0;
+      @include fluidSize(right, -16px, -32px);
+      @include fluidSize(padding, 16px, 32px);
+      transform: translateY(-100%);
+      background: transparent;
+      border: none;
+  
+      path {
+        fill: $white;
+      }
+  
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }

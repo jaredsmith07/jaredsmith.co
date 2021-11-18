@@ -1,0 +1,1136 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  max-width: 100% !important;
+  height: 100%;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth; }
+
+html {
+  font-size: 8px; }
+  @media only screen and (min-width: 768px) {
+    html {
+      font-size: 16px; } }
+
+body {
+  font-family: brandon-grotesque, Helvetica, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  font-size: calc(14px + 4 * ((100vw - 320px) / 830));
+  line-height: calc(22px + 6 * ((100vw - 320px) / 830));
+  color: #ffffff;
+  background: #101522; }
+  @media only screen and (min-width: 1800px) {
+    body {
+      font-size: calc(14px + 4 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 1800px) {
+    body {
+      line-height: calc(22px + 6 * ((1800px - 320px) / 830)); } }
+  body.modal-open {
+    overflow: hidden; }
+
+header,
+section,
+footer {
+  overflow: visible; }
+
+section {
+  padding-top: calc(60px + 36 * ((100vw - 320px) / 830));
+  padding-bottom: calc(60px + 36 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    section {
+      padding-top: calc(60px + 36 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 1800px) {
+    section {
+      padding-bottom: calc(60px + 36 * ((1800px - 320px) / 830)); } }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.container {
+  margin: 0 calc(12px + 5vw);
+  width: calc(100% - (24px + 10vw));
+  padding: 0;
+  max-width: none; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      margin: 0 auto;
+      max-width: calc(768px + 312 * ((100vw - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) and (min-width: 1800px) {
+    .container {
+      max-width: calc(768px + 312 * ((1800px - 320px) / 830)); } }
+
+img,
+video {
+  max-width: 100%;
+  height: auto; }
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  mix-blend-mode: exclusion; }
+
+h1 {
+  font-size: calc(36px + 24 * ((100vw - 320px) / 830));
+  line-height: 1.2; }
+  @media only screen and (min-width: 1800px) {
+    h1 {
+      font-size: calc(36px + 24 * ((1800px - 320px) / 830)); } }
+
+h2 {
+  font-size: calc(18px + 12 * ((100vw - 320px) / 830));
+  line-height: 1.4; }
+  @media only screen and (min-width: 1800px) {
+    h2 {
+      font-size: calc(18px + 12 * ((1800px - 320px) / 830)); } }
+
+h3 {
+  font-size: calc(18px + 2 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    h3 {
+      font-size: calc(18px + 2 * ((1800px - 320px) / 830)); } }
+
+h4 {
+  font-size: calc(14px + 4 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    h4 {
+      font-size: calc(14px + 4 * ((1800px - 320px) / 830)); } }
+
+h5 {
+  font-size: calc(14px + 2 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    h5 {
+      font-size: calc(14px + 2 * ((1800px - 320px) / 830)); } }
+
+h6 {
+  font-size: calc(12px + 4 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    h6 {
+      font-size: calc(12px + 4 * ((1800px - 320px) / 830)); } }
+
+p, li {
+  font-size: calc(14px + 4 * ((100vw - 320px) / 830));
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  mix-blend-mode: exclusion; }
+  @media only screen and (min-width: 1800px) {
+    p, li {
+      font-size: calc(14px + 4 * ((1800px - 320px) / 830)); } }
+  p a, li a {
+    font-size: calc(12px + 4 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      p a, li a {
+        font-size: calc(12px + 4 * ((1800px - 320px) / 830)); } }
+
+li {
+  font-size: calc(12px + 4 * ((100vw - 320px) / 830));
+  line-height: 1.6;
+  margin-top: calc(1.25rem / 2);
+  margin-bottom: calc(1.25rem / 2);
+  font-weight: 500; }
+  @media only screen and (min-width: 1800px) {
+    li {
+      font-size: calc(12px + 4 * ((1800px - 320px) / 830)); } }
+
+p.sidetext {
+  font-size: calc(8px + 2 * ((100vw - 320px) / 830));
+  display: block;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap; }
+  @media only screen and (min-width: 1800px) {
+    p.sidetext {
+      font-size: calc(8px + 2 * ((1800px - 320px) / 830)); } }
+
+p.lead-text {
+  font-size: calc(20px + 4 * ((100vw - 320px) / 830));
+  line-height: 1.4; }
+  @media only screen and (min-width: 1800px) {
+    p.lead-text {
+      font-size: calc(20px + 4 * ((1800px - 320px) / 830)); } }
+  p.lead-text a {
+    font-size: calc(20px + 4 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      p.lead-text a {
+        font-size: calc(20px + 4 * ((1800px - 320px) / 830)); } }
+
+p.small-text {
+  font-size: calc(8px + 2 * ((100vw - 320px) / 830));
+  margin: 0; }
+  @media only screen and (min-width: 1800px) {
+    p.small-text {
+      font-size: calc(8px + 2 * ((1800px - 320px) / 830)); } }
+
+a {
+  color: #3FE5F7;
+  font-weight: 700;
+  transition: color ease-in-out 0.25s; }
+  a:hover {
+    color: #3FFBBD; }
+  a.text-link {
+    font-size: calc(11px + 3 * ((100vw - 320px) / 830));
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    line-height: 2em;
+    white-space: nowrap; }
+    @media only screen and (min-width: 1800px) {
+      a.text-link {
+        font-size: calc(11px + 3 * ((1800px - 320px) / 830)); } }
+    a.text-link:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 0.2em);
+      height: 2px;
+      background: #3FE5F7; }
+    a.text-link:hover:after {
+      background: #3289E6; }
+
+ul {
+  list-style: square; }
+
+::selection {
+  background: #191C2B;
+  color: #F1F1F1; }
+
+::-moz-selection {
+  background: #191C2B;
+  color: #F1F1F1; }
+
+.social-icon-list {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  line-height: 0;
+  margin: 0 calc(1.25rem * -0.25); }
+  .social-icon-list a {
+    display: block;
+    margin: 0 calc(1.25rem * 0.25);
+    width: 42px;
+    height: 42px;
+    position: relative;
+    border: solid 2px #191C2B; }
+    .social-icon-list a svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .social-icon-list a:hover {
+      background: #191C2B; }
+      .social-icon-list a:hover svg path {
+        fill: #ffffff; }
+  .social-icon-list P {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 28, 43, 0.5);
+  transition: all ease-in-out 0.25s;
+  z-index: -999;
+  opacity: 0; }
+  .modal.modal--open {
+    z-index: 999;
+    opacity: 1;
+    display: block; }
+  .modal .modal__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 720px;
+    max-height: 90vh;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px 0 rgba(25, 28, 43, 0.75);
+    padding: calc(16px + 16 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      .modal .modal__inner {
+        padding: calc(16px + 16 * ((1800px - 320px) / 830)); } }
+  .modal .modal__close {
+    position: absolute;
+    top: 0;
+    right: calc(-16px + -16 * ((100vw - 320px) / 830));
+    padding: calc(16px + 16 * ((100vw - 320px) / 830));
+    transform: translateY(-100%);
+    background: transparent;
+    border: none; }
+    @media only screen and (min-width: 1800px) {
+      .modal .modal__close {
+        right: calc(-16px + -16 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .modal .modal__close {
+        padding: calc(16px + 16 * ((1800px - 320px) / 830)); } }
+    .modal .modal__close path {
+      fill: #ffffff; }
+    .modal .modal__close:hover {
+      opacity: 0.75; }
+
+header {
+  position: absolute; }
+
+.signature {
+  width: calc(120px + 40 * ((100vw - 320px) / 830));
+  mix-blend-mode: exclusion; }
+  @media only screen and (min-width: 1800px) {
+    .signature {
+      width: calc(120px + 40 * ((1800px - 320px) / 830)); } }
+  .signature path {
+    fill: #ffffff; }
+
+.section__intro {
+  height: 100vh;
+  position: relative; }
+  .section__intro .container {
+    height: 100%; }
+  .section__intro .intro__content {
+    display: flex;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: relative;
+    mix-blend-mode: exclusion;
+    z-index: 3; }
+    @media only screen and (min-width: 768px) {
+      .section__intro .intro__content {
+        max-width: 80%; } }
+  .section__intro > img {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: none;
+    height: 212vw;
+    animation: starRotation 300s infinite linear;
+    transform-origin: top left; }
+    @media (orientation: landscape) {
+      .section__intro > img {
+        height: 136vw; } }
+@keyframes starRotation {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(-359deg) translate(-50%, -50%); } }
+.sol {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(120px + 100 * ((100vw - 320px) / 830));
+  height: calc(120px + 100 * ((100vw - 320px) / 830));
+  border-radius: 50%;
+  border: solid 1px #fff;
+  box-shadow: 0 0 24px 12px #c7b760;
+  z-index: 1; }
+  @media only screen and (min-width: 1800px) {
+    .sol {
+      width: calc(120px + 100 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 1800px) {
+    .sol {
+      height: calc(120px + 100 * ((1800px - 320px) / 830)); } }
+  .sol > .blur {
+    width: calc(200% + 8vw);
+    height: calc(200% + 8vw);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.50;
+    mix-blend-mode: overlay;
+    z-index: 0;
+    filter: blur(8vw); }
+    @media only screen and (min-width: 768px) {
+      .sol > .blur {
+        filter: blur(16vw); } }
+    .sol > .blur.blur--1 {
+      left: 40%;
+      top: 40%;
+      background: #ff00b3; }
+    .sol > .blur.blur--2 {
+      left: 60%;
+      top: 60%;
+      background: #ffcb00; }
+  .sol > svg {
+    width: 150vw;
+    height: 150vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .sol > svg path {
+      fill: #ffffff; }
+
+.orbital {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: dashed 1px #505470;
+  transform-origin: left top;
+  z-index: -1; }
+
+@keyframes orbitRotation {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(359deg) translate(-50%, -50%); } }
+.orbit--mercury {
+  width: 25vh;
+  height: 25vh;
+  transform: translate(-50%, -50%) rotate(135deg);
+  animation: mercuryRotation 3s infinite linear; }
+@keyframes mercuryRotation {
+  from {
+    transform: rotate(135deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(494deg) translate(-50%, -50%); } }
+.orbit--venus {
+  width: 40vh;
+  height: 40vh;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: venusRotation 7.66s infinite linear; }
+@keyframes venusRotation {
+  from {
+    transform: rotate(45deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(404deg) translate(-50%, -50%); } }
+.orbit--earth {
+  width: 60vh;
+  height: 60vh;
+  transform: translate(-50%, -50%) rotate(330deg);
+  animation: earthRotation 12.45s infinite linear; }
+@keyframes earthRotation {
+  from {
+    transform: rotate(330deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(calc(330deg + 359deg)) translate(-50%, -50%); } }
+.orbit--mars {
+  width: 90vh;
+  height: 90vh;
+  transform: translate(-50%, -50%) rotate(60deg);
+  animation: marsRotation 23.43s infinite linear; }
+@keyframes marsRotation {
+  from {
+    transform: rotate(60deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(calc(60deg + 359deg)) translate(-50%, -50%); } }
+.orbit--jupiter {
+  width: 110vh;
+  height: 110vh;
+  transform: translate(-50%, -50%) rotate(330deg);
+  animation: jupiterRotation 147.62s infinite linear; }
+@keyframes jupiterRotation {
+  from {
+    transform: rotate(330deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(calc(330deg + 359deg)) translate(-50%, -50%); } }
+.orbit--saturn {
+  width: 130vh;
+  height: 130vh;
+  transform: translate(-50%, -50%) rotate(55deg);
+  animation: saturnRotation 366s infinite linear; }
+@keyframes saturnRotation {
+  from {
+    transform: rotate(55deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(calc(55deg + 359deg)) translate(-50%, -50%); } }
+.orbit--uranus {
+  width: 160vh;
+  height: 160vh;
+  transform: translate(-50%, -50%) rotate(15deg);
+  animation: uranusRotation 1042s infinite linear; }
+@keyframes uranusRotation {
+  from {
+    transform: rotate(15deg) translate(-50%, -50%); }
+  to {
+    transform: rotate(calc(15deg + 359deg)) translate(-50%, -50%); } }
+.orbit--neptune {
+  width: 202vh;
+  height: 202vh;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: orbitRotation 3085s infinite linear; }
+
+@media (orientation: landscape) {
+  .orbit--mercury {
+    width: 26vw;
+    height: 26vw; }
+
+  .orbit--venus {
+    width: 34vw;
+    height: 34vw; }
+
+  .orbit--earth {
+    width: 44vw;
+    height: 44vw; }
+
+  .orbit--mars {
+    width: 55vw;
+    height: 55vw; }
+
+  .orbit--jupiter {
+    width: 76vw;
+    height: 76vw; }
+
+  .orbit--saturn {
+    width: 95vw;
+    height: 95vw; }
+
+  .orbit--uranus {
+    width: 116vw;
+    height: 116vw; }
+
+  .orbit--neptune {
+    width: 134vw;
+    height: 134vw; } }
+.planet {
+  position: absolute;
+  left: 14.625%;
+  top: 14.625%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1; }
+  .planet .blur {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.50;
+    mix-blend-mode: overlay;
+    z-index: 0;
+    filter: blur(8vw); }
+    @media only screen and (min-width: 768px) {
+      .planet .blur {
+        filter: blur(16vw); } }
+    .planet .blur.blur--1 {
+      left: 30%;
+      top: 30%; }
+    .planet .blur.blur--2 {
+      left: 70%;
+      top: 70%; }
+  .planet.planet--mercury .blur, .planet.planet--venus .blur, .planet.planet--earth .blur, .planet.planet--mars .blur, .planet.planet--uranus .blur {
+    width: calc(350% + 8vw);
+    height: calc(350% + 8vw); }
+  .planet.planet--jupiter .blur, .planet.planet--saturn .blur, .planet.planet--neptune .blur {
+    width: calc(200% + 8vw);
+    height: calc(200% + 8vw); }
+  .planet.planet--mercury {
+    width: calc(15px + 5 * ((100vw - 320px) / 830));
+    height: calc(15px + 5 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #df00ff; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--mercury {
+        width: calc(15px + 5 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--mercury {
+        height: calc(15px + 5 * ((1800px - 320px) / 830)); } }
+    .planet.planet--mercury > svg * {
+      stroke: #ff00ef; }
+    .planet.planet--mercury .blur.blur--1 {
+      background: #5000ff; }
+    .planet.planet--mercury .blur.blur--2 {
+      background: #0028ff; }
+  .planet.planet--venus {
+    width: calc(20px + 10 * ((100vw - 320px) / 830));
+    height: calc(20px + 10 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #f09a13; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--venus {
+        width: calc(20px + 10 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--venus {
+        height: calc(20px + 10 * ((1800px - 320px) / 830)); } }
+    .planet.planet--venus > svg * {
+      stroke: #f09a13; }
+    .planet.planet--venus .blur.blur--1 {
+      background: #ffc63f; }
+    .planet.planet--venus .blur.blur--2 {
+      background: #d21c1c; }
+  .planet.planet--earth {
+    width: calc(25px + 15 * ((100vw - 320px) / 830));
+    height: calc(25px + 15 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px steelblue; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--earth {
+        width: calc(25px + 15 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--earth {
+        height: calc(25px + 15 * ((1800px - 320px) / 830)); } }
+    .planet.planet--earth > svg * {
+      stroke: steelblue; }
+    .planet.planet--earth .blur.blur--1 {
+      background: #50ff00; }
+    .planet.planet--earth .blur.blur--2 {
+      background: #0004ff; }
+  .planet.planet--mars {
+    width: calc(20px + 10 * ((100vw - 320px) / 830));
+    height: calc(20px + 10 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #ca323a; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--mars {
+        width: calc(20px + 10 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--mars {
+        height: calc(20px + 10 * ((1800px - 320px) / 830)); } }
+    .planet.planet--mars > svg * {
+      stroke: #ca323a; }
+    .planet.planet--mars .blur.blur--1 {
+      background: #ff0078; }
+    .planet.planet--mars .blur.blur--2 {
+      background: #ff2400; }
+  .planet.planet--jupiter {
+    width: calc(80px + 40 * ((100vw - 320px) / 830));
+    height: calc(80px + 40 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #e2c941; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--jupiter {
+        width: calc(80px + 40 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--jupiter {
+        height: calc(80px + 40 * ((1800px - 320px) / 830)); } }
+    .planet.planet--jupiter > svg * {
+      stroke: #e2c941; }
+    .planet.planet--jupiter .blur.blur--1 {
+      background: #ffc63f; }
+    .planet.planet--jupiter .blur.blur--2 {
+      background: #d21c1c; }
+  .planet.planet--saturn {
+    width: calc(60px + 40 * ((100vw - 320px) / 830));
+    height: calc(60px + 40 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #ebd9b6; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--saturn {
+        width: calc(60px + 40 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--saturn {
+        height: calc(60px + 40 * ((1800px - 320px) / 830)); } }
+    .planet.planet--saturn > svg * {
+      stroke: #ebd9b6; }
+    .planet.planet--saturn .blur.blur--1 {
+      background: #ffa800; }
+    .planet.planet--saturn .blur.blur--2 {
+      background: #ebd9b6; }
+  .planet.planet--uranus {
+    width: calc(30px + 10 * ((100vw - 320px) / 830));
+    height: calc(30px + 10 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px #10cfb4; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--uranus {
+        width: calc(30px + 10 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--uranus {
+        height: calc(30px + 10 * ((1800px - 320px) / 830)); } }
+    .planet.planet--uranus > svg * {
+      stroke: #10cfb4; }
+    .planet.planet--uranus .blur.blur--1 {
+      background: #1610cf; }
+    .planet.planet--uranus .blur.blur--2 {
+      background: #10cfb4; }
+  .planet.planet--neptune {
+    width: calc(24px + 12 * ((100vw - 320px) / 830));
+    height: calc(24px + 12 * ((100vw - 320px) / 830));
+    border: solid 1px #fff;
+    box-shadow: 0 0 6px 3px lightblue; }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--neptune {
+        width: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+    @media only screen and (min-width: 1800px) {
+      .planet.planet--neptune {
+        height: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+    .planet.planet--neptune .blur {
+      filter: blur(60px); }
+      .planet.planet--neptune .blur.blur--1 {
+        background: #9faedd; }
+      .planet.planet--neptune .blur.blur--2 {
+        background: #25ffff; }
+    .planet.planet--neptune svg path {
+      fill: #ffffff; }
+
+.section__about {
+  position: relative;
+  z-index: 5;
+  mix-blend-mode: exclusion;
+  height: 100vh; }
+  .section__about .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section__about h2 {
+    text-align: center;
+    max-width: 800px; }
+
+.section__portfolio {
+  margin-top: calc(-60px + -36 * ((100vw - 320px) / 830));
+  padding-top: 0;
+  z-index: 1;
+  position: relative; }
+  @media only screen and (min-width: 1800px) {
+    .section__portfolio {
+      margin-top: calc(-60px + -36 * ((1800px - 320px) / 830)); } }
+
+.portfolio__item {
+  margin-bottom: calc(60px + 36 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    .portfolio__item {
+      margin-bottom: calc(60px + 36 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) {
+    .portfolio__item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .portfolio__item > * {
+        flex-basis: 50%; } }
+  .portfolio__item .portfolio__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: white; }
+    .portfolio__item .portfolio__heading:hover {
+      color: #3FFBBD; }
+    @media only screen and (min-width: 768px) {
+      .portfolio__item .portfolio__heading {
+        justify-content: flex-start; } }
+    .portfolio__item .portfolio__heading h3 {
+      margin: 0 4px 0 0; }
+    .portfolio__item .portfolio__heading svg.icon--external-link {
+      width: calc(8px + 4 * ((100vw - 320px) / 830));
+      margin-top: 4px; }
+      @media only screen and (min-width: 1800px) {
+        .portfolio__item .portfolio__heading svg.icon--external-link {
+          width: calc(8px + 4 * ((1800px - 320px) / 830)); } }
+  .portfolio__item .subheading {
+    margin-top: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #505470;
+    font-size: calc(12px + 4 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      .portfolio__item .subheading {
+        font-size: calc(12px + 4 * ((1800px - 320px) / 830)); } }
+  .portfolio__item:nth-child(even) .portfolio__content {
+    order: 1;
+    margin: 0;
+    margin-right: calc(24px + 12 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      .portfolio__item:nth-child(even) .portfolio__content {
+        margin-right: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+
+.portfolio__content {
+  order: 3;
+  text-align: center;
+  margin-top: calc(24px + 12 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    .portfolio__content {
+      margin-top: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) {
+    .portfolio__content {
+      text-align: left;
+      margin: 0;
+      margin-left: calc(24px + 12 * ((100vw - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) and (min-width: 1800px) {
+    .portfolio__content {
+      margin-left: calc(24px + 12 * ((1800px - 320px) / 830)); } }
+
+.portfolio__tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  @media only screen and (min-width: 768px) {
+    .portfolio__tags {
+      justify-content: flex-start; } }
+  .portfolio__tags .tag {
+    border-radius: 50px;
+    padding: 0px 8px;
+    color: #ffffff;
+    margin-right: 12px;
+    font-size: calc(10px + 4 * ((100vw - 320px) / 830)); }
+    @media only screen and (min-width: 1800px) {
+      .portfolio__tags .tag {
+        font-size: calc(10px + 4 * ((1800px - 320px) / 830)); } }
+  .portfolio__tags .tag--design {
+    color: #3FE5F7;
+    border: solid 1px #3FE5F7; }
+  .portfolio__tags .tag--dev {
+    color: #3289E6;
+    border: solid 1px #3289E6; }
+
+.portfolio__gallery {
+  order: 2; }
+
+.gallery__center {
+  padding-left: calc(24px + 58 * ((100vw - 320px) / 830));
+  padding-right: calc(24px + 58 * ((100vw - 320px) / 830)); }
+  @media only screen and (min-width: 1800px) {
+    .gallery__center {
+      padding-left: calc(24px + 58 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 1800px) {
+    .gallery__center {
+      padding-right: calc(24px + 58 * ((1800px - 320px) / 830)); } }
+  @media only screen and (min-width: 768px) {
+    .gallery__center {
+      padding: 0; } }
+  .gallery__center img {
+    outline: solid 1px #ffffff;
+    border: solid 5px #101522;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 0 96px 0 #404a66; }
+
+footer {
+  text-align: center; }
+
+/*# sourceMappingURL=main.css.map */

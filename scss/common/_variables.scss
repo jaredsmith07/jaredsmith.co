@@ -1,0 +1,64 @@
+// Variables
+// ================================================================================
+
+// Min/max Sizes (for computing fluid sizes)
+$min-view-size: 320px;
+$max-view-size: 1150px;
+
+// Media Queries
+$tablet: 768px;
+$desktop: 1200px;
+$desktop-xl: 1800px;
+
+// Layout
+$container-size: 1080px;
+$container-gutter-desktop: 32px;
+
+// Typography
+$primary-font: brandon-grotesque,Helvetica,"Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+$secondary-font: $primary-font;
+$line-spacing: 1.25rem;
+
+// Colors
+$black-d: #101522;
+$black: #191C2B;
+$black-l: #1E2030;
+$black-ll: #272939;
+$black-lll: #505470;
+
+$grey-d: #AAAAAA;
+$grey: #DDDDDD;
+$grey-l: #F1F1F1;
+
+$white: #ffffff; //F1E8DE
+
+$primary-color-d: #3289E6;;
+$primary-color: #3FE5F7;
+$primary-color-l: #3FE5F7;
+
+$secondary-color: #FF4B7D;
+
+$border-thickness: 2px;
+
+// Spacing
+$s1: 6px;
+$s2: 12px;
+$s3: 18px;
+$s4: 24px;
+$s5: 30px;
+$s6: 36px;
+$s7: 42px;
+$s8: 48px;
+$s9: 54px;
+$s10: 60px;
+$s11: 66px;
+$s12: 72px;
+$s13: 78px;
+$s14: 84px;
+$s15: 90px;
+$s16: 96px;
+$s17: 102px;
+$s18: 108px;
+$s19: 114px;
+$s20: 120px;
+$s24: 144px;

@@ -1,0 +1,151 @@
+// Mixins
+// ================================================================================
+
+// Absolute centering
+@mixin absoluteCenter($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+}
+
+// Font Smoothing
+@mixin fontSmoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Accessible-friendly hide
+@mixin hide {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Hide for animation (with no js fallback)
+@mixin invisible {
+    opacity: 0;
+
+    @at-root .no-js & {
+        opacity: 1 !important;
+    }
+}
+
+// Strip units
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+
+// Fluid sizing (px only)
+// ------------------------------------------------------------
+// Calc fluid size below max breakpoint
+@function fluidSize($min-size, $max-size) {
+    $u1: unit($min-view-size);
+    $u2: unit($max-view-size);
+    $u3: unit($min-size);
+    $u4: unit($max-size);
+
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        @return calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-view-size}) / #{strip-unit($max-view-size - $min-view-size)}));
+    }
+}
+// Calc static size at max breakpoint so it stops growing
+@function maxFluidSize($min-size, $max-size) {
+    $u1: unit($min-view-size);
+    $u2: unit($max-view-size);
+    $u3: unit($min-size);
+    $u4: unit($max-size);
+
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        @return calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((#{$desktop-xl} - #{$min-view-size}) / #{strip-unit($max-view-size - $min-view-size)}));
+    }
+}
+// Create mixin to enable max fluid size
+@mixin fluidSize($style, $min-size, $max-size) {
+    #{$style}: fluidSize($min-size, $max-size);
+
+    @media only screen and (min-width:$desktop-xl) {
+        #{$style}: maxFluidSize($min-size, $max-size);
+    }
+}
+// ------------------------------------------------------------
+
+
+// Decorative Media Corners
+@mixin mediaCorners {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        @include fluidSize(height, $s1, $s2);
+        @include fluidSize(width, $s1, $s2);
+    }
+    &:before {
+        top: 0;
+        left: 0;
+        transform: translate(-100%, -100%);
+        border-right: solid $border-thickness $black;
+        border-bottom: solid $border-thickness $black;
+    }
+    &:after {
+        bottom: 0;
+        right: 0;
+        transform: translate(100%, 100%);
+        border-left: solid $border-thickness $black;
+        border-top: solid $border-thickness $black;
+    }
+}
+
+@mixin mediaCornersAlt {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        @include fluidSize(height, $s1, $s2);
+        @include fluidSize(width, $s1, $s2);
+    }
+    &:before {
+        bottom: 0;
+        left: 0;
+        transform: translate(-100%, 100%);
+        border-right: solid $border-thickness $black;
+        border-top: solid $border-thickness $black;
+    }
+    &:after {
+        top: 0;
+        right: 0;
+        transform: translate(100%, -100%);
+        border-left: solid $border-thickness $black;
+        border-bottom: solid $border-thickness $black;
+    }
+}
+
+@mixin containMedia($heightRatio) {
+    .media-wrap {
+        display: block;
+        width: 100%;
+        padding-top: $heightRatio;
+        position: relative;
+        overflow: hidden;
+    }
+    img,
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

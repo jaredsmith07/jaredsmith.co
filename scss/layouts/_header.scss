@@ -1,0 +1,14 @@
+// Header Styles
+// ================================================================================
+
+header {
+    position: absolute;
+}
+.signature {
+    // margin-top: 24px;
+    @include fluidSize(width, 120px, 160px);
+    mix-blend-mode: exclusion;
+    path {
+        fill: $white;
+    }
+}
