@@ -520,6 +520,10 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         @include fluidSize(font-size, 8px, 10px);
+        &:last-child {
+            margin-right: 0;
+        }
+        
     }
     .tag--design {
         color: $primary-color;
@@ -542,7 +546,7 @@
     .center__wrap {
         border: solid 2px $white;
         border-radius: 50%;
-        box-shadow: 0 0 96px 0 #404a66;
+        box-shadow: 0 0 96px 0 #53618a;
         transition: all ease-in-out 0.25s;
         transform: rotate(-5deg);
         &:hover {
@@ -557,6 +561,7 @@
         border: solid 6px $black-d;
         border-radius: 50%;
         display: block;
+        transition: all ease-in-out 0.25s;
     }
 }
 

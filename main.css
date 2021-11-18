@@ -1104,6 +1104,8 @@ header {
     @media only screen and (min-width: 1800px) {
       .portfolio__tags .tag {
         font-size: calc(8px + 2 * ((1800px - 320px) / 830)); } }
+    .portfolio__tags .tag:last-child {
+      margin-right: 0; }
   .portfolio__tags .tag--design {
     color: #3FE5F7;
     border: solid 1px #3FE5F7; }
@@ -1129,7 +1131,7 @@ header {
   .gallery__center .center__wrap {
     border: solid 2px #ffffff;
     border-radius: 50%;
-    box-shadow: 0 0 96px 0 #404a66;
+    box-shadow: 0 0 96px 0 #53618a;
     transition: all ease-in-out 0.25s;
     transform: rotate(-5deg); }
     .gallery__center .center__wrap:hover {
@@ -1140,7 +1142,8 @@ header {
   .gallery__center img {
     border: solid 6px #101522;
     border-radius: 50%;
-    display: block; }
+    display: block;
+    transition: all ease-in-out 0.25s; }
 
 footer {
   text-align: center; }
