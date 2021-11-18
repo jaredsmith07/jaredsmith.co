@@ -537,8 +537,11 @@
     @media only screen and (min-width: $tablet) {
         padding: 0;
     }
+    .center__wrap {
+        border: solid 1px $white;
+        border-radius: 50%;
+    }
     img {
-        outline: solid 1px $white;
         border: solid 5px $black-d;
         border-radius: 50%;
         display: block;
