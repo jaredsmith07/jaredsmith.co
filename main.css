@@ -323,7 +323,7 @@ body {
   font-size: calc(14px + 4 * ((100vw - 320px) / 830));
   line-height: calc(22px + 6 * ((100vw - 320px) / 830));
   color: #ffffff;
-  background: #101522; }
+  background: #00030b; }
   @media only screen and (min-width: 1800px) {
     body {
       font-size: calc(14px + 4 * ((1800px - 320px) / 830)); } }
