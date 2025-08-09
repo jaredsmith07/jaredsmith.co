@@ -24,7 +24,7 @@
     @include fluidSize(font-size, 14px, 18px);
     @include fluidSize(line-height, 22px, 28px);
     color: $white;
-    background: $black-d;
+    background: #00030b;
   
     &.modal-open {
       overflow: hidden;
