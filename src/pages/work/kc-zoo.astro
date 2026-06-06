@@ -1,0 +1,106 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+    title="Kansas City Zoo Map | Jared Smith"
+    projectTitle="Kansas City Zoo Map"
+    type="UX/UI Design"
+    tagline="An interactive, mobile-first wayfinding map that turned 202 acres of zoo into a place visitors could confidently explore."
+    client="Kansas City Zoo"
+    role="UX/UI Designer"
+    timeline="10 weeks"
+    platform="Web (mobile-first), Zoo app"
+    nextHref="/work/ihopu"
+    nextTitle="IHOPU Website"
+>
+    <div class="case-study-section">
+        <span class="case-study-section__label">The Problem</span>
+        <h2 class="case-study-section__title">202 acres, one outdated paper map</h2>
+        <div class="case-study-section__body">
+            <p>Visitor surveys showed that 34% of zoo guests reported difficulty navigating the park. The zoo covered 202 acres across multiple habitat zones, and the existing printed map hadn't been updated in three years. New exhibits had opened, attractions had moved, and visitors — especially families — were constantly getting lost.</p>
+            <p>Staff reported that a significant portion of their time was spent giving directions. Complaint cards frequently mentioned navigation. And for a zoo trying to grow annual attendance, the experience was quietly working against them.</p>
+        </div>
+    </div>
+
+    <div class="case-study-two-col">
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">34%</p>
+            <p class="case-study-insight__label">Of visitors reported difficulty navigating the park in annual surveys</p>
+        </div>
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">3 yrs</p>
+            <p class="case-study-insight__label">Since the printed map had been updated — multiple new exhibits missing</p>
+        </div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Research</span>
+        <h2 class="case-study-section__title">Getting lost on purpose</h2>
+        <div class="case-study-section__body">
+            <p>I started in the field. Four Saturday observation sessions at the zoo gave me a ground-level view of how visitors actually moved — where they paused, where they backtracked, what they photographed, and where they pulled out their phones.</p>
+            <ul>
+                <li>Exit interviews with 45 visitors across two weekends</li>
+                <li>Interviews with 5 animal keepers and 3 operations staff</li>
+                <li>Review of one year of complaint logs and social media mentions tagged at the zoo</li>
+                <li>Heuristic audit of 4 competitor zoo wayfinding apps</li>
+            </ul>
+            <p>Three patterns emerged clearly. Families with young children consistently prioritized bathrooms and food — they needed amenity proximity, not exhibit hierarchy. "What's near me?" was the most repeated question at information kiosks. And high outdoor glare was destroying the usability of existing digital displays — contrast wasn't just a nice-to-have, it was foundational.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Field research notes and affinity mapping — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Design Process</span>
+        <h2 class="case-study-section__title">Designing for bright sun and small fingers</h2>
+        <div class="case-study-section__body">
+            <p>I collaborated closely with the zoo's GIS team to establish accurate spatial data as the foundation. From there, four major design challenges shaped the work:</p>
+            <ul>
+                <li><strong>Visual hierarchy</strong> — how to layer habitat zones, primary exhibits, secondary exhibits, and amenities without creating visual noise</li>
+                <li><strong>Outdoor contrast</strong> — a high-contrast color system that passed WCAG AA minimums even under direct sunlight simulation</li>
+                <li><strong>Touch target sizing</strong> — minimum 44×44px interactive areas designed for gloves, sunscreen-covered fingers, and small children reaching</li>
+                <li><strong>Orientation recovery</strong> — persistent "You Are Here" logic and habitat zone labels that made it easy to reorient after entering a new area</li>
+            </ul>
+            <p>I iterated through four map layout versions, testing each with a small group of local families. The final layout introduced habitat-zone color coding as the primary navigation layer, with exhibit icons living within zones rather than floating independently.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Map layout iterations v1–v4 — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">The Solution</span>
+        <h2 class="case-study-section__title">A map that knows where you are</h2>
+        <div class="case-study-section__body">
+            <p>An interactive, mobile-first map with real-time "You Are Here" positioning, proximity-based exhibit search, and one-tap walking directions. Color-coded habitat zones provide immediate orientation context. Large, readable labels and high-contrast iconography remain legible in direct sunlight.</p>
+            <p>The search experience was designed for the most common use case: a parent with a 5-year-old asking "where are the giraffes?" — two taps, no typing required. Amenity filters (food, restrooms, seating) surfaced the things families needed most, right when they needed them.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Final map design — mobile and desktop — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Results</span>
+        <h2 class="case-study-section__title">Less getting lost, more staying longer</h2>
+        <div class="case-study-section__body">
+            <p>Post-launch visitor surveys and operational data told a clear story. Getting people oriented and moving with confidence had a direct effect on the experience quality — and on staff capacity.</p>
+        </div>
+    </div>
+
+    <div class="case-study-two-col">
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">41%</p>
+            <p class="case-study-insight__label">Drop in visitor complaints about navigation in the 3 months post-launch</p>
+        </div>
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">8 min</p>
+            <p class="case-study-insight__label">Average reduction in time needed to find a target exhibit</p>
+        </div>
+    </div>
+</CaseStudyLayout>

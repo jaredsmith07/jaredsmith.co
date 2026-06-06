@@ -1,0 +1,1051 @@
+// Variables
+// ================================================================================
+$min-view-size: 320px;
+$max-view-size: 1150px;
+$tablet: 768px;
+$desktop: 1200px;
+$desktop-xl: 1800px;
+$container-size: 1080px;
+$container-gutter-desktop: 32px;
+$primary-font: brandon-grotesque, Helvetica, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+$line-spacing: 1.25rem;
+$black-d: #101522;
+$black: #191C2B;
+$black-l: #1E2030;
+$black-ll: #272939;
+$black-lll: #505470;
+$grey-d: #AAAAAA;
+$grey: #DDDDDD;
+$grey-l: #F1F1F1;
+$white: #ffffff;
+$primary-color-d: #3289E6;
+$primary-color: #3FE5F7;
+$primary-color-l: #3FE5F7;
+$secondary-color: #FF4B7D;
+$border-thickness: 2px;
+$s1: 6px; $s2: 12px; $s3: 18px; $s4: 24px; $s5: 30px; $s6: 36px;
+$s7: 42px; $s8: 48px; $s9: 54px; $s10: 60px; $s11: 66px; $s12: 72px;
+$s13: 78px; $s14: 84px; $s15: 90px; $s16: 96px; $s17: 102px; $s18: 108px;
+$s19: 114px; $s20: 120px; $s24: 144px;
+
+
+// Mixins
+// ================================================================================
+@mixin absoluteCenter($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+}
+
+@mixin hide {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function fluidSize($min-size, $max-size) {
+    $u1: unit($min-view-size);
+    $u2: unit($max-view-size);
+    $u3: unit($min-size);
+    $u4: unit($max-size);
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        @return calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-view-size}) / #{strip-unit($max-view-size - $min-view-size)}));
+    }
+}
+
+@function maxFluidSize($min-size, $max-size) {
+    $u1: unit($min-view-size);
+    $u2: unit($max-view-size);
+    $u3: unit($min-size);
+    $u4: unit($max-size);
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        @return calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((#{$desktop-xl} - #{$min-view-size}) / #{strip-unit($max-view-size - $min-view-size)}));
+    }
+}
+
+@mixin fluidSize($style, $min-size, $max-size) {
+    #{$style}: fluidSize($min-size, $max-size);
+    @media only screen and (min-width: $desktop-xl) {
+        #{$style}: maxFluidSize($min-size, $max-size);
+    }
+}
+
+
+// Normalize (minimal reset)
+// ================================================================================
+*, *::before, *::after { box-sizing: border-box; }
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+main { display: block; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+a { background-color: transparent; }
+img { border-style: none; }
+button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; }
+button { overflow: visible; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+
+// Global
+// ================================================================================
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+    max-width: 100% !important;
+    height: 100%;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 8px;
+    @media only screen and (min-width: $tablet) {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: $primary-font;
+    @include fluidSize(font-size, 14px, 18px);
+    @include fluidSize(line-height, 22px, 28px);
+    color: $white;
+    background: #00030b;
+}
+
+header, section, footer {
+    overflow: visible;
+}
+
+section {
+    @include fluidSize(padding-top, $s10, $s16);
+    @include fluidSize(padding-bottom, $s10, $s16);
+}
+
+.container {
+    margin: 0 calc(12px + 5vw);
+    width: calc(100% - (24px + 10vw));
+    padding: 0;
+    max-width: none;
+    @media only screen and (min-width: $tablet) {
+        margin: 0 auto;
+        @include fluidSize(max-width, 768px, $container-size);
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.screen-reader-text { @include hide(); }
+
+
+// Typography
+// ================================================================================
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: $line-spacing;
+    margin-bottom: $line-spacing;
+}
+
+h1 {
+    @include fluidSize(font-size, $s6, $s10);
+    line-height: 1.2;
+}
+
+h2 { @include fluidSize(font-size, $s3, $s5); line-height: 1.4; }
+h3 { @include fluidSize(font-size, 18px, 20px); }
+h4 { @include fluidSize(font-size, 14px, 18px); }
+h5 { @include fluidSize(font-size, 14px, 16px); }
+h6 { @include fluidSize(font-size, 12px, 16px); }
+
+p, li {
+    @include fluidSize(font-size, 14px, 18px);
+    line-height: 1.6;
+    margin-top: $line-spacing;
+    margin-bottom: $line-spacing;
+    font-weight: 500;
+}
+
+li { @include fluidSize(font-size, 12px, 16px); }
+
+p.lead-text {
+    @include fluidSize(font-size, 20px, 24px);
+    line-height: 1.4;
+    a { @include fluidSize(font-size, 20px, 24px); }
+}
+
+a {
+    color: $primary-color;
+    font-weight: 700;
+    transition: color ease-in-out 0.25s;
+    &:hover { color: #3FFBBD; }
+}
+
+::selection { background: $black; color: $grey-l; }
+::-moz-selection { background: $black; color: $grey-l; }
+
+
+// Nav
+// ================================================================================
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0, 3, 11, 0.85) 0%, rgba(0, 3, 11, 0) 100%);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media only screen and (min-width: $tablet) {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    }
+
+    .nav__logo {
+        display: block;
+        line-height: 0;
+        svg {
+            @include fluidSize(width, 80px, 120px);
+            path { fill: $white; }
+            transition: opacity ease-in-out 0.25s;
+        }
+        &:hover svg { opacity: 0.7; }
+    }
+
+    .nav__links {
+        display: flex;
+        gap: 32px;
+        a {
+            color: $white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            @include fluidSize(font-size, 10px, 12px);
+            opacity: 0.7;
+            transition: opacity ease-in-out 0.25s;
+            &:hover { opacity: 1; color: $white; }
+        }
+    }
+}
+
+
+// Header (signature in hero)
+// ================================================================================
+.signature {
+    @include fluidSize(width, 120px, 160px);
+    mix-blend-mode: exclusion;
+    path { fill: $white; }
+}
+
+
+// Hero / Intro Section
+// ================================================================================
+.section__intro {
+    height: 100vh;
+    position: relative;
+    .container {
+        height: 100%;
+    }
+    .intro__content {
+        display: flex;
+        height: 100%;
+        flex-flow: column nowrap;
+        justify-content: center;
+        @media only screen and (min-width: $tablet) {
+            max-width: 80%;
+        }
+        position: relative;
+        mix-blend-mode: exclusion;
+        z-index: 3;
+    }
+    & > .stars-bg {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        max-width: none;
+        height: 204vh;
+        animation: starRotation 300s infinite linear;
+        transform-origin: top left;
+        pointer-events: none;
+        @media (orientation: landscape) {
+            height: 136vw;
+        }
+        @keyframes starRotation {
+            from { transform: rotate(0deg) translate(-50%, -50%); }
+            to { transform: rotate(-359deg) translate(-50%, -50%); }
+        }
+    }
+}
+
+.sol {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include fluidSize(width, 120px, 220px);
+    @include fluidSize(height, 120px, 220px);
+    border-radius: 50%;
+    border: solid 1px #fff;
+    box-shadow: 0 0 24px 12px #c7b760;
+    z-index: 1;
+    & > .blur {
+        width: calc(200% + 8vw);
+        height: calc(200% + 8vw);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0.50;
+        mix-blend-mode: overlay;
+        z-index: 0;
+        filter: blur(8vw);
+        @media only screen and (min-width: $tablet) { filter: blur(16vw); }
+        &.blur--1 { left: 40%; top: 40%; background: #ff00b3; }
+        &.blur--2 { left: 60%; top: 60%; background: #ffcb00; }
+    }
+}
+
+.orbital {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    border: dashed 1px $black-lll;
+    transform-origin: left top;
+    z-index: -1;
+}
+@keyframes orbitRotation {
+    from { transform: rotate(0deg) translate(-50%, -50%); }
+    to { transform: rotate(359deg) translate(-50%, -50%); }
+}
+
+.orbit--mercury {
+    width: 25vh; height: 25vh;
+    transform: translate(-50%, -50%) rotate(135deg);
+    animation: mercuryRotation 3s infinite linear;
+    @keyframes mercuryRotation {
+        from { transform: rotate(135deg) translate(-50%, -50%); }
+        to { transform: rotate(494deg) translate(-50%, -50%); }
+    }
+}
+.orbit--venus {
+    width: 40vh; height: 40vh;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: venusRotation 7.66s infinite linear;
+    @keyframes venusRotation {
+        from { transform: rotate(45deg) translate(-50%, -50%); }
+        to { transform: rotate(404deg) translate(-50%, -50%); }
+    }
+}
+.orbit--earth {
+    width: 60vh; height: 60vh;
+    transform: translate(-50%, -50%) rotate(330deg);
+    animation: earthRotation 12.45s infinite linear;
+    @keyframes earthRotation {
+        from { transform: rotate(330deg) translate(-50%, -50%); }
+        to { transform: rotate(calc(330deg + 359deg)) translate(-50%, -50%); }
+    }
+}
+.orbit--mars {
+    width: 90vh; height: 90vh;
+    transform: translate(-50%, -50%) rotate(60deg);
+    animation: marsRotation 23.43s infinite linear;
+    @keyframes marsRotation {
+        from { transform: rotate(60deg) translate(-50%, -50%); }
+        to { transform: rotate(calc(60deg + 359deg)) translate(-50%, -50%); }
+    }
+}
+.orbit--jupiter {
+    width: 110vh; height: 110vh;
+    transform: translate(-50%, -50%) rotate(330deg);
+    animation: jupiterRotation 147.62s infinite linear;
+    @keyframes jupiterRotation {
+        from { transform: rotate(330deg) translate(-50%, -50%); }
+        to { transform: rotate(calc(330deg + 359deg)) translate(-50%, -50%); }
+    }
+}
+.orbit--saturn {
+    width: 130vh; height: 130vh;
+    transform: translate(-50%, -50%) rotate(55deg);
+    animation: saturnRotation 366s infinite linear;
+    @keyframes saturnRotation {
+        from { transform: rotate(55deg) translate(-50%, -50%); }
+        to { transform: rotate(calc(55deg + 359deg)) translate(-50%, -50%); }
+    }
+}
+.orbit--uranus {
+    width: 160vh; height: 160vh;
+    transform: translate(-50%, -50%) rotate(15deg);
+    animation: uranusRotation 1042s infinite linear;
+    @keyframes uranusRotation {
+        from { transform: rotate(15deg) translate(-50%, -50%); }
+        to { transform: rotate(calc(15deg + 359deg)) translate(-50%, -50%); }
+    }
+}
+.orbit--neptune {
+    width: 202vh; height: 202vh;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: orbitRotation 3085s infinite linear;
+}
+
+@media (orientation: landscape) {
+    .orbit--mercury { width: 26vw; height: 26vw; }
+    .orbit--venus { width: 34vw; height: 34vw; }
+    .orbit--earth { width: 44vw; height: 44vw; }
+    .orbit--mars { width: 55vw; height: 55vw; }
+    .orbit--jupiter { width: 76vw; height: 76vw; }
+    .orbit--saturn { width: 95vw; height: 95vw; }
+    .orbit--uranus { width: 116vw; height: 116vw; }
+    .orbit--neptune { width: 134vw; height: 134vw; }
+}
+
+.planet {
+    position: absolute;
+    left: 14.625%;
+    top: 14.625%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    .blur {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        filter: blur(8vw);
+        opacity: 0.50;
+        mix-blend-mode: overlay;
+        z-index: 0;
+        @media only screen and (min-width: $tablet) { filter: blur(16vw); }
+        &.blur--1 { left: 30%; top: 30%; }
+        &.blur--2 { left: 70%; top: 70%; }
+    }
+    &.planet--mercury, &.planet--venus, &.planet--earth, &.planet--mars, &.planet--uranus {
+        .blur { width: calc(350% + 8vw); height: calc(350% + 8vw); }
+    }
+    &.planet--jupiter, &.planet--saturn, &.planet--neptune {
+        .blur { width: calc(200% + 8vw); height: calc(200% + 8vw); }
+    }
+    &.planet--mercury {
+        @include fluidSize(width, 15px, 20px); @include fluidSize(height, 15px, 20px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #df00ff;
+        .blur { &.blur--1 { background: #5000ff; } &.blur--2 { background: #0028ff; } }
+    }
+    &.planet--venus {
+        @include fluidSize(width, 20px, 30px); @include fluidSize(height, 20px, 30px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #f09a13;
+        .blur { &.blur--1 { background: #ffc63f; } &.blur--2 { background: #d21c1c; } }
+    }
+    &.planet--earth {
+        @include fluidSize(width, 25px, 40px); @include fluidSize(height, 25px, 40px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px steelblue;
+        .blur { &.blur--1 { background: #50ff00; } &.blur--2 { background: #0004ff; } }
+    }
+    &.planet--mars {
+        @include fluidSize(width, 20px, 30px); @include fluidSize(height, 20px, 30px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #ca323a;
+        .blur { &.blur--1 { background: #ff0078; } &.blur--2 { background: #ff2400; } }
+    }
+    &.planet--jupiter {
+        @include fluidSize(width, 80px, 120px); @include fluidSize(height, 80px, 120px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #e2c941;
+        .blur { &.blur--1 { background: #ffc63f; } &.blur--2 { background: #d21c1c; } }
+    }
+    &.planet--saturn {
+        @include fluidSize(width, 60px, 100px); @include fluidSize(height, 60px, 100px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #ebd9b6;
+        .blur { &.blur--1 { background: #ffa800; } &.blur--2 { background: #ebd9b6; } }
+    }
+    &.planet--uranus {
+        @include fluidSize(width, 30px, 40px); @include fluidSize(height, 30px, 40px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px #10cfb4;
+        .blur { &.blur--1 { background: #1610cf; } &.blur--2 { background: #10cfb4; } }
+    }
+    &.planet--neptune {
+        @include fluidSize(width, 24px, 36px); @include fluidSize(height, 24px, 36px);
+        border: solid 1px #fff; box-shadow: 0 0 6px 3px lightblue;
+        .blur {
+            filter: blur(60px);
+            &.blur--1 { background: #9faedd; }
+            &.blur--2 { background: #25ffff; }
+        }
+    }
+}
+
+
+// About / Dedication Section
+// ================================================================================
+.section__about {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        text-align: center;
+        mix-blend-mode: exclusion;
+    }
+}
+
+
+// Work Section
+// ================================================================================
+.section__work {
+    position: relative;
+    z-index: 5;
+    @include fluidSize(padding-top, $s10, $s20);
+    @include fluidSize(padding-bottom, $s10, $s16);
+
+    .section__label {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        @include fluidSize(font-size, 9px, 11px);
+        font-weight: 700;
+        color: $black-lll;
+        @include fluidSize(margin-bottom, $s4, $s6);
+    }
+
+    .section__title {
+        @include fluidSize(font-size, $s5, $s8);
+        font-weight: 700;
+        margin: 0;
+        @include fluidSize(margin-bottom, $s8, $s12);
+        mix-blend-mode: exclusion;
+    }
+}
+
+
+// Case Study Cards
+// ================================================================================
+.case-studies {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include fluidSize(gap, $s6, $s8);
+    @include fluidSize(margin-bottom, $s10, $s16);
+
+    @media only screen and (min-width: $tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.case-study-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: $white;
+    position: relative;
+    transition: transform ease-in-out 0.3s;
+
+    &:hover {
+        transform: translateY(-4px);
+        color: $white;
+        .case-study-card__image-wrap { border-radius: 8px; }
+        .case-study-card__cta { color: #3FFBBD; }
+        .case-study-card__image-wrap img { transform: scale(1.03); }
+    }
+
+    &__image-wrap {
+        position: relative;
+        width: 100%;
+        padding-top: 66%;
+        overflow: hidden;
+        border-radius: 12px;
+        border: solid 1px rgba($white, 0.1);
+        background: $black-l;
+        transition: border-radius ease-in-out 0.3s;
+        box-shadow: 0 0 60px 0 rgba(63, 229, 247, 0.08);
+
+        img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform ease-in-out 0.4s;
+        }
+
+        .placeholder {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__inner {
+                text-align: center;
+                opacity: 0.25;
+                p {
+                    @include fluidSize(font-size, 10px, 12px);
+                    text-transform: uppercase;
+                    letter-spacing: 0.2em;
+                    margin: 0;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    &__content {
+        @include fluidSize(padding-top, $s3, $s4);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__type {
+        @include fluidSize(font-size, 9px, 11px);
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-weight: 700;
+        color: $primary-color;
+        margin: 0 0 6px;
+    }
+
+    &__title {
+        @include fluidSize(font-size, $s3, $s4);
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.3;
+    }
+
+    &__desc {
+        @include fluidSize(font-size, 13px, 15px);
+        line-height: 1.5;
+        color: $grey-d;
+        margin: 0;
+        flex: 1;
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        @include fluidSize(font-size, 11px, 13px);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 700;
+        color: $white;
+        @include fluidSize(margin-top, $s3, $s4);
+        transition: color ease-in-out 0.25s;
+    }
+}
+
+
+// Divider between case studies and portfolio items
+// ================================================================================
+.work-divider {
+    border: none;
+    border-top: solid 1px $black-ll;
+    @include fluidSize(margin-bottom, $s10, $s14);
+}
+
+.work-section-label {
+    @include fluidSize(font-size, $s3, $s4);
+    font-weight: 700;
+    margin: 0;
+    @include fluidSize(margin-bottom, $s8, $s10);
+    mix-blend-mode: exclusion;
+}
+
+
+// Portfolio Items (existing style)
+// ================================================================================
+.portfolio__item {
+    @include fluidSize(margin-bottom, $s10, $s16);
+    @media only screen and (min-width: $tablet) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        & > * { flex-basis: 50%; }
+    }
+    .portfolio__heading {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        @media only screen and (min-width: $tablet) { justify-content: flex-start; }
+        h3 { margin: 0 4px 0 0; }
+        svg.icon--external-link {
+            @include fluidSize(width, 8px, 12px);
+            margin-top: 4px;
+        }
+    }
+    a.portfolio__heading:hover { color: #3FFBBD; }
+    .subheading {
+        margin-top: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $black-lll;
+        @include fluidSize(font-size, 12px, 16px);
+    }
+    &:nth-child(even) {
+        .portfolio__content {
+            @media only screen and (min-width: $tablet) {
+                order: 1;
+                margin: 0;
+                @include fluidSize(margin-right, 24px, 36px);
+            }
+        }
+        .gallery__center .center__wrap {
+            transform: rotate(5deg);
+            &:hover { transform: rotate(0deg); }
+        }
+    }
+}
+
+.portfolio__content {
+    order: 3;
+    text-align: center;
+    @include fluidSize(margin-top, 24px, 36px);
+    @media only screen and (min-width: $tablet) {
+        text-align: left;
+        margin: 0;
+        @include fluidSize(margin-left, 24px, 36px);
+    }
+    p { mix-blend-mode: normal; }
+}
+
+.portfolio__tags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @media only screen and (min-width: $tablet) { justify-content: flex-start; }
+    .tag {
+        border-radius: 50px;
+        padding: 1px 12px;
+        margin-right: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @include fluidSize(font-size, 8px, 10px);
+        &:last-child { margin-right: 0; }
+    }
+    .tag--design { color: $primary-color; border: solid 1px $primary-color; }
+    .tag--dev { color: $primary-color-d; border: solid 1px $primary-color-d; }
+}
+
+.portfolio__gallery { order: 2; }
+
+.gallery__center {
+    @include fluidSize(padding-left, 24px, 82px);
+    @include fluidSize(padding-right, 24px, 82px);
+    @media only screen and (min-width: $tablet) { padding: 0; }
+    .center__wrap {
+        border: solid 1.5px $white;
+        border-radius: 50%;
+        box-shadow: 0 0 96px 0 #53618a;
+        transition: all ease-in-out 0.25s;
+        transform: rotate(-5deg);
+        &:hover {
+            border-radius: 5%;
+            transform: rotate(0deg);
+            img { border-radius: 5%; }
+        }
+    }
+    img {
+        border-radius: 50%;
+        display: block;
+        transition: all ease-in-out 0.25s;
+    }
+}
+
+
+// Case Study Pages
+// ================================================================================
+.case-study-hero {
+    @include fluidSize(padding-top, $s16, $s20);
+    @include fluidSize(padding-bottom, $s8, $s12);
+    position: relative;
+
+    &__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        @include fluidSize(font-size, 10px, 12px);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+        color: $grey-d;
+        text-decoration: none;
+        @include fluidSize(margin-bottom, $s4, $s6);
+        transition: color ease-in-out 0.25s;
+        &:hover { color: $white; }
+    }
+
+    &__type {
+        @include fluidSize(font-size, 9px, 11px);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        font-weight: 700;
+        color: $primary-color;
+        margin: 0 0 12px;
+    }
+
+    &__title {
+        @include fluidSize(font-size, $s8, $s16);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 16px;
+        mix-blend-mode: exclusion;
+    }
+
+    &__tagline {
+        @include fluidSize(font-size, 16px, 20px);
+        color: $grey-d;
+        max-width: 640px;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.case-study-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include fluidSize(gap, $s4, $s6);
+    @include fluidSize(padding-top, $s8, $s10);
+    @include fluidSize(padding-bottom, $s8, $s10);
+    border-top: solid 1px $black-ll;
+    border-bottom: solid 1px $black-ll;
+    @include fluidSize(margin-bottom, $s10, $s14);
+
+    @media only screen and (min-width: $tablet) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__item {
+        &__label {
+            @include fluidSize(font-size, 9px, 10px);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: $black-lll;
+            font-weight: 700;
+            margin: 0 0 6px;
+            display: block;
+        }
+        &__value {
+            @include fluidSize(font-size, 13px, 15px);
+            font-weight: 700;
+            color: $white;
+            margin: 0;
+        }
+    }
+}
+
+.case-study-cover {
+    width: 100%;
+    @include fluidSize(border-radius, 8px, 16px);
+    border: solid 1px rgba($white, 0.1);
+    background: $black-l;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    @include fluidSize(margin-bottom, $s10, $s16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .placeholder-cover {
+        text-align: center;
+        opacity: 0.2;
+        p {
+            @include fluidSize(font-size, 11px, 14px);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+}
+
+.case-study-section {
+    @include fluidSize(margin-bottom, $s10, $s16);
+
+    &__label {
+        @include fluidSize(font-size, 9px, 11px);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        font-weight: 700;
+        color: $primary-color;
+        margin: 0 0 16px;
+        display: block;
+    }
+
+    &__title {
+        @include fluidSize(font-size, $s4, $s6);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 16px;
+        mix-blend-mode: exclusion;
+    }
+
+    &__body {
+        max-width: 680px;
+        p {
+            @include fluidSize(font-size, 15px, 17px);
+            line-height: 1.7;
+            color: rgba($white, 0.8);
+            mix-blend-mode: normal;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                @include fluidSize(font-size, 14px, 16px);
+                line-height: 1.6;
+                color: rgba($white, 0.8);
+                padding-left: 20px;
+                position: relative;
+                &::before {
+                    content: "—";
+                    position: absolute;
+                    left: 0;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.case-study-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include fluidSize(gap, $s6, $s10);
+    @include fluidSize(margin-bottom, $s10, $s16);
+    @media only screen and (min-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.case-study-insight {
+    background: $black-l;
+    border: solid 1px $black-ll;
+    @include fluidSize(border-radius, 8px, 12px);
+    @include fluidSize(padding, $s5, $s7);
+
+    &__number {
+        @include fluidSize(font-size, $s8, $s12);
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 1;
+        margin: 0 0 8px;
+    }
+
+    &__label {
+        @include fluidSize(font-size, 13px, 15px);
+        color: $grey-d;
+        margin: 0;
+        line-height: 1.4;
+    }
+}
+
+.case-study-image-block {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: $black-l;
+    border: solid 1px $black-ll;
+    @include fluidSize(border-radius, 8px, 12px);
+    @include fluidSize(margin-bottom, $s6, $s10);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .placeholder-block {
+        text-align: center;
+        opacity: 0.2;
+        p {
+            @include fluidSize(font-size, 10px, 12px);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+}
+
+.case-study-next {
+    border-top: solid 1px $black-ll;
+    @include fluidSize(padding-top, $s10, $s14);
+    @include fluidSize(padding-bottom, $s10, $s14);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: $white;
+    transition: color ease-in-out 0.25s;
+
+    &:hover {
+        color: #3FFBBD;
+    }
+
+    &__label {
+        @include fluidSize(font-size, 9px, 11px);
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-weight: 700;
+        color: $black-lll;
+        margin: 0 0 8px;
+        display: block;
+    }
+
+    &__title {
+        @include fluidSize(font-size, $s4, $s6);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    &__arrow {
+        @include fluidSize(font-size, $s6, $s8);
+        font-weight: 300;
+        flex-shrink: 0;
+        margin-left: 24px;
+    }
+}
+
+
+// Footer
+// ================================================================================
+footer {
+    text-align: center;
+    @include fluidSize(padding-top, $s6, $s8);
+    @include fluidSize(padding-bottom, $s6, $s8);
+    p {
+        @include fluidSize(font-size, 10px, 12px);
+        color: $black-lll;
+        margin: 0;
+        mix-blend-mode: normal;
+    }
+}

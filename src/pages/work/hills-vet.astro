@@ -1,0 +1,101 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+    title="Hill's Browse by Condition | Jared Smith"
+    projectTitle="Hill's Browse by Condition"
+    type="UX Research & Design"
+    tagline="Helping pet owners find the right nutrition for their pet's specific health condition — without getting lost in a 200+ product catalog."
+    client="Hill's Pet Nutrition"
+    role="Lead UX Designer"
+    timeline="14 weeks"
+    platform="E-commerce website"
+    nextHref="/work/kc-zoo"
+    nextTitle="Kansas City Zoo Map"
+>
+    <div class="case-study-section">
+        <span class="case-study-section__label">The Problem</span>
+        <h2 class="case-study-section__title">A catalog built for products, not for people</h2>
+        <div class="case-study-section__body">
+            <p>Hill's Pet Nutrition offers over 200 products across therapeutic and lifestyle formulas. Veterinarians recommend Hill's every day — but when pet owners arrived at the website, they hit a wall. The navigation was organized by product line, not by health concern. A dog owner told by their vet "try Hill's for kidney support" had no clear path forward.</p>
+            <p>Analytics confirmed the friction: users entering with condition-related search terms had a 68% bounce rate from product listing pages. The catalog wasn't working as a discovery tool — it was working as a barrier.</p>
+        </div>
+    </div>
+
+    <div class="case-study-two-col">
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">68%</p>
+            <p class="case-study-insight__label">Bounce rate for condition-driven search traffic hitting product listings</p>
+        </div>
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">200+</p>
+            <p class="case-study-insight__label">Products in catalog with no condition-first navigation pathway</p>
+        </div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Research</span>
+        <h2 class="case-study-section__title">Understanding the pet owner's mental model</h2>
+        <div class="case-study-section__body">
+            <p>Before sketching anything, I needed to understand how pet owners actually think about their pet's food. I ran a mixed-methods research sprint over four weeks.</p>
+            <ul>
+                <li>12 user interviews with pet owners who had received a Hill's recommendation from their vet</li>
+                <li>Competitive analysis of 6 pet nutrition brands and their catalog navigation patterns</li>
+                <li>Card sorting exercise with 24 participants to surface mental models around food categories</li>
+                <li>3 months of on-site search query data analyzed for condition-related terminology</li>
+            </ul>
+            <p>The central insight: users arrived with a health condition in mind, not a product name. "Kidney disease food," "dental care," "weight management" — these were their entry points. Trust was also paramount — they wanted vet validation surfaced at every step of the journey, not buried in fine print.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Research synthesis board — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Design Process</span>
+        <h2 class="case-study-section__title">From condition to cart</h2>
+        <div class="case-study-section__body">
+            <p>I led three rounds of wireframing — from rough sketches in collaborative workshops with the product and content teams, through low-fidelity flows, to a high-fidelity interactive prototype built in Figma.</p>
+            <p>The core design challenge was hierarchy: how do you surface 8–12 condition categories without overwhelming a user who is already stressed about their pet's health? I tested three distinct navigation treatments before landing on a simple, scannable condition picker that lived as a persistent entry point alongside the existing browse-by-product path.</p>
+            <p>Two rounds of usability testing (6 participants each) validated the approach and surfaced key copy changes — "Kidney Disease" outperformed "Renal Health" by a significant margin in recognition testing.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Wireframe progressions — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">The Solution</span>
+        <h2 class="case-study-section__title">Browse by Condition</h2>
+        <div class="case-study-section__body">
+            <p>A new primary navigation pathway — "Browse by Condition" — that lets users select their pet's health concern and surfaces relevant products with educational context explaining why each formula is recommended. Each condition landing page leads with a brief, vet-authored explanation of the condition, followed by the product recommendations and a prompt to consult their vet.</p>
+            <p>The feature was designed to coexist with the existing catalog, not replace it — respecting the existing user journeys while opening a new front door for the majority of condition-driven traffic.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <div class="placeholder-block"><p>Final design — Browse by Condition UI — placeholder</p></div>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Results</span>
+        <h2 class="case-study-section__title">Measurably less friction, measurably more confidence</h2>
+        <div class="case-study-section__body">
+            <p>After launch, the condition-based entry path became the highest-performing acquisition route for new users within six weeks.</p>
+        </div>
+    </div>
+
+    <div class="case-study-two-col">
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">31%</p>
+            <p class="case-study-insight__label">Reduction in bounce rate from product catalog for condition-driven traffic</p>
+        </div>
+        <div class="case-study-insight">
+            <p class="case-study-insight__number">22%</p>
+            <p class="case-study-insight__label">Increase in add-to-cart from condition-based entry paths</p>
+        </div>
+    </div>
+</CaseStudyLayout>

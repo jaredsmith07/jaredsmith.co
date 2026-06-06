@@ -1,0 +1,83 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+    title: string;
+    projectTitle: string;
+    type: string;
+    tagline: string;
+    client: string;
+    role: string;
+    timeline: string;
+    platform: string;
+    coverImage?: string;
+    nextHref: string;
+    nextTitle: string;
+}
+
+const {
+    title,
+    projectTitle,
+    type,
+    tagline,
+    client,
+    role,
+    timeline,
+    platform,
+    coverImage,
+    nextHref,
+    nextTitle,
+} = Astro.props;
+---
+
+<BaseLayout title={title}>
+    <div class="container">
+        <div class="case-study-hero">
+            <a href="/#work" class="case-study-hero__back">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 1L1 5L5 9M1 5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                All Work
+            </a>
+            <p class="case-study-hero__type">{type}</p>
+            <h1 class="case-study-hero__title">{projectTitle}</h1>
+            <p class="case-study-hero__tagline">{tagline}</p>
+        </div>
+
+        <div class="case-study-meta">
+            <div class="case-study-meta__item">
+                <span class="case-study-meta__item__label">Client</span>
+                <p class="case-study-meta__item__value">{client}</p>
+            </div>
+            <div class="case-study-meta__item">
+                <span class="case-study-meta__item__label">Role</span>
+                <p class="case-study-meta__item__value">{role}</p>
+            </div>
+            <div class="case-study-meta__item">
+                <span class="case-study-meta__item__label">Timeline</span>
+                <p class="case-study-meta__item__value">{timeline}</p>
+            </div>
+            <div class="case-study-meta__item">
+                <span class="case-study-meta__item__label">Platform</span>
+                <p class="case-study-meta__item__value">{platform}</p>
+            </div>
+        </div>
+
+        <div class="case-study-cover">
+            {coverImage
+                ? <img src={coverImage} alt={projectTitle} />
+                : <div class="placeholder-cover"><p>Cover image coming soon</p></div>
+            }
+        </div>
+
+        <slot />
+
+        <a href={nextHref} class="case-study-next">
+            <div>
+                <span class="case-study-next__label">Next Case Study</span>
+                <p class="case-study-next__title">{nextTitle}</p>
+            </div>
+            <span class="case-study-next__arrow">&rarr;</span>
+        </a>
+    </div>
+</BaseLayout>

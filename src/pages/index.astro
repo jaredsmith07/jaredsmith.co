@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SolarSystem from '../components/SolarSystem.astro';
+
+const caseStudies = [
+    {
+        href: '/work/hills-vet',
+        type: "UX Research & Design",
+        title: "Hill's Browse by Condition",
+        desc: "Redesigning product discovery for pet owners navigating a vet-recommended food catalog.",
+        image: null,
+        gradient: "linear-gradient(135deg, #1a1f35 0%, #0d1a2e 100%)",
+    },
+    {
+        href: '/work/kc-zoo',
+        type: "UX/UI Design",
+        title: "Kansas City Zoo Map",
+        desc: "An interactive wayfinding map helping visitors explore 202 acres with confidence.",
+        image: null,
+        gradient: "linear-gradient(135deg, #0f2a1f 0%, #0a1a14 100%)",
+    },
+    {
+        href: '/work/ihopu',
+        type: "UI/UX Design & Development",
+        title: "IHOPU Website",
+        desc: "A complete redesign that doubled time-on-site and increased application starts by 28%.",
+        image: '/assets/ihopu-website.jpg',
+        gradient: null,
+    },
+];
+
+const portfolioItems = [
+    {
+        image: '/assets/unceasing-worship.jpg',
+        href: 'https://unceasingworship.com/',
+        title: 'Unceasing Worship',
+        subheading: 'App',
+        desc: 'Unceasing is a streaming service and music label with a unique subscription model and wonderful music catalog. I was hired to design the UI/UX for the mobile app and website, bringing a multitude of features into a simple and delightful interface.',
+        tags: [
+            { label: 'UI/UX Design', type: 'design' },
+            { label: 'App Design', type: 'design' },
+        ],
+    },
+    {
+        image: '/assets/onething-2018.jpg',
+        href: 'https://web.archive.org/web/20181209165348/https://www.ihopkc.org/onething/',
+        title: 'Onething 2018',
+        subheading: 'Brand & Website',
+        desc: 'The annual Onething conference in Kansas City has been a project I\'ve enjoyed over several years. Each year has a unique aesthetic — I designed the branding for 2018 and helped translate it into the website and photography.',
+        tags: [
+            { label: 'Branding', type: 'design' },
+            { label: 'Front-end Development', type: 'dev' },
+        ],
+    },
+    {
+        image: '/assets/ense.jpg',
+        href: 'https://empowermentschools.org/',
+        title: 'Every Nation School of Empowerment',
+        subheading: 'Brand & Website',
+        desc: 'For ENSE, I designed a new logo and WordPress website. The goal was to create a brand and web experience that combined the academic and spiritual nature of the school into one cohesive visual identity.',
+        tags: [
+            { label: 'Branding', type: 'design' },
+            { label: 'Front-end Development', type: 'dev' },
+        ],
+    },
+    {
+        image: '/assets/tikvah.jpg',
+        href: null,
+        title: 'Tikvah Coffee',
+        subheading: 'Packaging',
+        desc: 'Tikvah is a unique take on instant coffee with natural, health-focused ingredients for the on-the-go. I aimed to balance "premium quality" with "all-natural" in an eye-catching design.',
+        tags: [
+            { label: 'Branding', type: 'design' },
+            { label: 'Packaging Design', type: 'design' },
+        ],
+    },
+    {
+        image: '/assets/logos.jpg',
+        href: null,
+        title: 'Logo Designs',
+        subheading: '2011–2021',
+        desc: 'A sampling of logos I\'ve designed over the years.',
+        tags: [
+            { label: 'Branding', type: 'design' },
+        ],
+    },
+];
+---
+
+<BaseLayout>
+    <section class="section__intro">
+        <img class="stars-bg" src="/assets/stars-circle.png" alt="" aria-hidden="true" />
+        <div class="container">
+            <div class="intro__content">
+                <h1>Hi! I'm Jared.</h1>
+                <p class="lead-text">I'm a graphic designer, front-end developer, and UI/UX designer. I get my fix by learning how the world works and doing what I can to help make it better.</p>
+                <p class="lead-text">I can theoretically be reached at <a href="mailto:jaredsmith07@gmail.com">this old gmail address</a>.</p>
+                <p>Live long and prosper.</p>
+            </div>
+            <SolarSystem />
+        </div>
+    </section>
+
+    <section class="section__work" id="work">
+        <div class="container">
+            <span class="section__label">Selected Work</span>
+
+            <div class="case-studies">
+                {caseStudies.map((cs) => (
+                    <a href={cs.href} class="case-study-card">
+                        <div class="case-study-card__image-wrap" style={cs.gradient ? `background: ${cs.gradient}` : ''}>
+                            {cs.image
+                                ? <img src={cs.image} alt={cs.title} />
+                                : <div class="placeholder">
+                                    <div class="placeholder__inner">
+                                        <p>{cs.title}</p>
+                                    </div>
+                                  </div>
+                            }
+                        </div>
+                        <div class="case-study-card__content">
+                            <p class="case-study-card__type">{cs.type}</p>
+                            <h3 class="case-study-card__title">{cs.title}</h3>
+                            <p class="case-study-card__desc">{cs.desc}</p>
+                            <span class="case-study-card__cta">
+                                View Case Study
+                                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M9 1L13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+
+            <hr class="work-divider" />
+
+            <h3 class="work-section-label">More Work</h3>
+
+            {portfolioItems.map((item) => (
+                <div class="portfolio__item">
+                    <div class="portfolio__gallery gallery">
+                        <div class="gallery__center">
+                            <div class="center__wrap">
+                                <img src={item.image} alt={item.title} />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__content">
+                        {item.href
+                            ? <a class="portfolio__heading" href={item.href} target="_blank" rel="noopener noreferrer">
+                                <h3>{item.title}</h3>
+                                <svg class="icon--external-link" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                              </a>
+                            : <div class="portfolio__heading"><h3>{item.title}</h3></div>
+                        }
+                        <p class="subheading">{item.subheading}</p>
+                        <p>{item.desc}</p>
+                        <ul class="portfolio__tags">
+                            {item.tags.map((tag) => (
+                                <li class={`tag tag--${tag.type}`}>{tag.label}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="section__about">
+        <div class="container">
+            <h2>For Andrea, Liam, Levi, Elijah, Eleanor, and Emma-Davina</h2>
+        </div>
+    </section>
+</BaseLayout>

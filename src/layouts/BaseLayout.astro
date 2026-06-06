@@ -1,0 +1,41 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.scss';
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = 'Jared Smith | Designer, Developer',
+    description = 'The personal portfolio website of Jared Smith — graphic designer, front-end developer, and UI/UX designer.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Jared Smith" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.jaredsmith.co/" />
+    <meta property="og:description" content={description} />
+    <link rel="stylesheet" href="https://use.typekit.net/fbd7bgv.css" />
+</head>
+<body>
+    <Nav />
+    <main>
+        <slot />
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; Jared Smith &mdash; Made with &#10084;&#65039; in KC</p>
+        </div>
+    </footer>
+</body>
+</html>
