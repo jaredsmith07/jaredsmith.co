@@ -6,94 +6,130 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
     title="Kansas City Zoo Map | Jared Smith"
     projectTitle="Kansas City Zoo Map"
     type="UX/UI Design"
-    tagline="An interactive, mobile-first wayfinding map that turned 202 acres of zoo into a place visitors could confidently explore."
+    tagline="Leveraging a ground-up redesign of the park map as an experience ambassador and genuinely "
     client="Kansas City Zoo"
     role="UX/UI Designer"
     timeline="10 weeks"
-    platform="Web (mobile-first), Zoo app"
+    platform="Print, Web (mobile-first)"
+    coverImage="/assets/kczoo/kczoomap_holding.jpeg"
     nextHref="/work/ihopu"
     nextTitle="IHOPU Website"
 >
     <div class="case-study-section">
-        <span class="case-study-section__label">The Problem</span>
-        <h2 class="case-study-section__title">202 acres, one outdated paper map</h2>
+        <span class="case-study-section__label">Overview</span>
+        <h2 class="case-study-section__title">Designing a new park map for print and digital experiences</h2>
         <div class="case-study-section__body">
-            <p>Visitor surveys showed that 34% of zoo guests reported difficulty navigating the park. The zoo covered 202 acres across multiple habitat zones, and the existing printed map hadn't been updated in three years. New exhibits had opened, attractions had moved, and visitors — especially families — were constantly getting lost.</p>
-            <p>Staff reported that a significant portion of their time was spent giving directions. Complaint cards frequently mentioned navigation. And for a zoo trying to grow annual attendance, the experience was quietly working against them.</p>
-        </div>
-    </div>
-
-    <div class="case-study-two-col">
-        <div class="case-study-insight">
-            <p class="case-study-insight__number">34%</p>
-            <p class="case-study-insight__label">Of visitors reported difficulty navigating the park in annual surveys</p>
-        </div>
-        <div class="case-study-insight">
-            <p class="case-study-insight__number">3 yrs</p>
-            <p class="case-study-insight__label">Since the printed map had been updated — multiple new exhibits missing</p>
+            <p>There's something about a well-designed map that feels inseparable from the experience itself — the anticipation of planning your day by pre-exploring the park with the map. When the Kansas City Zoo approached my agency about updating their park map, I was genuinely excited. The existing map had real problems I'd been mentally redesigning since my own visits, and I had a lot of ideas.</p>
+            <p>The map was struggling with user comprehension in a few specific ways: it didn't accurately reflect distances or geography, making day-planning harder than it needed to be. It lacked sufficient landmark detail. And it felt visually flat — not the kind of thing that excites you about what you're about to experience. A zoo map isn't just a navigation tool. It's often the first thing a guest engages with, and for many it's how they decide what to prioritize. It needed to do more than point people in the right direction.</p>
         </div>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">Research</span>
-        <h2 class="case-study-section__title">Getting lost on purpose</h2>
+        <span class="case-study-section__label">The problem</span>
+        <h2 class="case-study-section__title">Identifying areas to improve</h2>
         <div class="case-study-section__body">
-            <p>I started in the field. Four Saturday observation sessions at the zoo gave me a ground-level view of how visitors actually moved — where they paused, where they backtracked, what they photographed, and where they pulled out their phones.</p>
             <ul>
-                <li>Exit interviews with 45 visitors across two weekends</li>
-                <li>Interviews with 5 animal keepers and 3 operations staff</li>
-                <li>Review of one year of complaint logs and social media mentions tagged at the zoo</li>
-                <li>Heuristic audit of 4 competitor zoo wayfinding apps</li>
+                <li><strong>Split layout</strong> — The zoo's two main areas are separated by a river, and the old flyer addressed this by putting each side on opposite faces of the print piece. This meant guests could never see the whole park at once, and had no real sense of how the two halves related to each other spatially.</li>
+                <li><strong>Geographic inaccuracies</strong> — The original map used an abstracted layout that distorted relative distances and directions significantly. Guests couldn't reliably gauge how far apart exhibits were, which made planning a route across the park — especially with kids — genuinely frustrating.</li>
+                <li><strong>Insufficient detail</strong> — Several exhibits, buildings, and facilities weren't represented at all, leaving gaps that undermined the map's usefulness for first-time visitors.</li>
+                <li><strong>Weak iconography and typography</strong> — The labels and icons were difficult to read and didn't make the park feel exciting. For a place full of animals and experiences worth anticipating, the map felt remarkably inert.</li>
+                <li><strong>No digital experience</strong> — The zoo's online map was simply a downloadable PDF of the print flyer — not a great experience on any device, and essentially unusable on mobile.</li>
             </ul>
-            <p>Three patterns emerged clearly. Families with young children consistently prioritized bathrooms and food — they needed amenity proximity, not exhibit hierarchy. "What's near me?" was the most repeated question at information kiosks. And high outdoor glare was destroying the usability of existing digital displays — contrast wasn't just a nice-to-have, it was foundational.</p>
         </div>
     </div>
 
     <div class="case-study-image-block">
-        <div class="placeholder-block"><p>Field research notes and affinity mapping — placeholder</p></div>
+        <figure>
+            <img src="/assets/kczoo/kczoomap_oldversion.jpeg" alt="Original zoo map" />
+            <figcaption>Original flyer with the old map design split across the front and back.</figcaption>
+        </figure>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">Design Process</span>
-        <h2 class="case-study-section__title">Designing for bright sun and small fingers</h2>
+        <span class="case-study-section__label">Planning</span>
+        <h2 class="case-study-section__title">A digital-oriented approach to map usability</h2>
         <div class="case-study-section__body">
-            <p>I collaborated closely with the zoo's GIS team to establish accurate spatial data as the foundation. From there, four major design challenges shaped the work:</p>
+            <p>From the start, there was an ambition to build this map right — not just for print, but as the foundation for a fully interactive digital experience. The plan included an interactive web map with rollover information on each landmark, and potential future features like GPS-based "you are here" tracking and NFC devices placed around the park. To make any of that feasible, the map needed to be as geographically accurate as possible from the ground up.</p>
+            <p>An editable Adobe Illustrator file was ultimately required to design the map, so I needed to find a way to convert latitude/longitude coordinates into something usable in the design software.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <figure>
+            <img src="/assets/kczoo/kczoomap_gpspoints.jpg" alt="GPS point frame for map" />
+            <figcaption>1,800+ GPS points were mapped to create this frame that was used to build the final map.</figcaption>
+        </figure>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Framing</span>
+        <h2 class="case-study-section__title">Building the foundation: geo-accuracy</h2>
+        <div class="case-study-section__body">
+            <p>The first phase was the most technically intensive: documenting accurate coordinates for every exhibit, building, facility, and pathway in the zoo.</p>
+            <p>I gathered location data using a combination of a handheld GPS device on-site and precise coordinate extraction from Google Earth, recording everything into a spreadsheet. I then used an online coordinate converter to translate the latitude/longitude values into x/y coordinates, which I imported into Illustrator as the skeleton for the map. Paths and landscape features were traced using Google Earth as a reference for accurate shape and proportion. In total, I mapped over 1,800 coordinate points.</p>
+            <p>The result was a wireframe that was true to the actual geography of the zoo — something the original map had never been. Every path, every exhibit placement, every relative distance was now grounded in reality.</p>
+            <p>This accuracy never made it fully to fruition for the GPS and NFC features, but it paid off immediately in the print version: guests could now look at the map and trust that what they were seeing reflected the actual experience of moving through the park.</p>
+        </div>
+    </div>
+
+    <div class="case-study-image-block">
+        <figure>
+            <img src="/assets/kczoo/kczoomap_finaldigital.jpg" alt="Final digital map of the zoo" />
+            <figcaption>The final, digital map of the zoo, with color, typography, and iconography.</figcaption>
+        </figure>
+    </div>
+
+    <div class="case-study-section">
+        <span class="case-study-section__label">Design</span>
+        <h2 class="case-study-section__title">Filling out the frame</h2>
+        <div class="case-study-section__body">
+            <p>With the wireframe complete, I turned to the visual design of the map itself.</p>
             <ul>
-                <li><strong>Visual hierarchy</strong> — how to layer habitat zones, primary exhibits, secondary exhibits, and amenities without creating visual noise</li>
-                <li><strong>Outdoor contrast</strong> — a high-contrast color system that passed WCAG AA minimums even under direct sunlight simulation</li>
-                <li><strong>Touch target sizing</strong> — minimum 44×44px interactive areas designed for gloves, sunscreen-covered fingers, and small children reaching</li>
-                <li><strong>Orientation recovery</strong> — persistent "You Are Here" logic and habitat zone labels that made it easy to reorient after entering a new area</li>
+                <li><strong>Color and typography</strong> were informed by a broader brand refresh my agency was simultaneously developing for the zoo. I collaborated on the color palette and typography selections for that project and carried those choices into the map, with some modifications where usability required it — for instance, ensuring sufficient contrast between path colors, zone colors, and label text.</li>
+                <li><strong>Iconography</strong> was designed from scratch. I created a custom icon set representing animals, facilities, and points of interest throughout the park, prioritizing legibility at small sizes and a consistent visual style that felt fun without being childish.</li>
+                <li><strong>A unified layout</strong> replaced the two-sided split. By designing a single cohesive map that captured both sides of the river, I was able to give guests a complete picture of the park in one view — which made orientation and planning significantly more intuitive.</li>
             </ul>
-            <p>I iterated through four map layout versions, testing each with a small group of local families. The final layout introduced habitat-zone color coding as the primary navigation layer, with exhibit icons living within zones rather than floating independently.</p>
+            <p>My goal was a map that was primarily practical, but also genuinely enjoyable to read. I thought of it as an "activity ambassador" — something that could excite a guest about what they were about to experience, not just route them through it. The zoo map was one of the most visited pages on their website, and we knew that many users consulted it before ever arriving. A more engaging, accurate map could do real work in shaping those expectations.</p>
         </div>
     </div>
 
     <div class="case-study-image-block">
-        <div class="placeholder-block"><p>Map layout iterations v1–v4 — placeholder</p></div>
+        <figure>
+            <img src="/assets/kczoo/kczoomap_finalshowcase.jpeg" alt="Final printed map of the zoo" />
+            <figcaption>The printed flyer with the final map design and winter variant.</figcaption>
+        </figure>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">The Solution</span>
-        <h2 class="case-study-section__title">A map that knows where you are</h2>
+        <span class="case-study-section__label">Outcome</span>
+        <h2 class="case-study-section__title">Results and impact</h2>
         <div class="case-study-section__body">
-            <p>An interactive, mobile-first map with real-time "You Are Here" positioning, proximity-based exhibit search, and one-tap walking directions. Color-coded habitat zones provide immediate orientation context. Large, readable labels and high-contrast iconography remain legible in direct sunlight.</p>
-            <p>The search experience was designed for the most common use case: a parent with a 5-year-old asking "where are the giraffes?" — two taps, no typing required. Amenity filters (food, restrooms, seating) surfaced the things families needed most, right when they needed them.</p>
+            <p>The feedback from the zoo's marketing team was positive, and the map went into production for both print distribution and in-park signage.</p>
+            <p>What I'm most proud of: nearly a decade later, the map is still in use. I still have a family season pass to the KC Zoo, and every time I'm there with my kids I see my map on the signage and in the brochure racks. There aren't many projects in a designer's career where the work has that kind of longevity in a place you personally visit — that one's stayed with me.</p>
         </div>
     </div>
 
     <div class="case-study-image-block">
-        <div class="placeholder-block"><p>Final map design — mobile and desktop — placeholder</p></div>
+        <figure>
+            <img src="/assets/kczoo/kczoomap_comparison.jpeg" alt="Old vs new map designs" />
+            <figcaption>The old map design (right) versus the new, improved design (left).</figcaption>
+        </figure>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">Results</span>
-        <h2 class="case-study-section__title">Less getting lost, more staying longer</h2>
+        <span class="case-study-section__label">Reflection</span>
+        <h2 class="case-study-section__title">Lessons learned</h2>
         <div class="case-study-section__body">
-            <p>Post-launch visitor surveys and operational data told a clear story. Getting people oriented and moving with confidence had a direct effect on the experience quality — and on staff capacity.</p>
+            <p>Looking back with fresh eyes, there are two things I'd do differently.</p>
+            <ul>
+                <li><strong>Photography over icons</strong> — I went with illustrated icons partly to save time and partly out of concern that animal photos might look inconsistent or cheap. I think that was the wrong call. Small, well-treated cut-out photographs of the actual animals would have made the map more emotionally engaging and easier to read — the icons are functional, but photos would have brought it to life in a way the icons don't.</li>
+                <li><strong>Slightly larger type</strong> — We pushed hard to get the map printed on larger flyers, and I used that extra real estate to keep labels tight. In hindsight, I was too conservative. The type is readable, but a few points larger across the board would have made it significantly more accessible for guests with poorer eyesight — an important consideration for an audience that includes older visitors and parents who are already juggling a lot.</li>
+            </ul>
+            <p>Both are relatively small things, and neither undermines what the map accomplishes. But they're the details I notice every time I pick one up at the gate.</p>
         </div>
     </div>
 
-    <div class="case-study-two-col">
+    <!-- <div class="case-study-two-col">
         <div class="case-study-insight">
             <p class="case-study-insight__number">41%</p>
             <p class="case-study-insight__label">Drop in visitor complaints about navigation in the 3 months post-launch</p>
@@ -102,5 +138,5 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
             <p class="case-study-insight__number">8 min</p>
             <p class="case-study-insight__label">Average reduction in time needed to find a target exhibit</p>
         </div>
-    </div>
+    </div> -->
 </CaseStudyLayout>

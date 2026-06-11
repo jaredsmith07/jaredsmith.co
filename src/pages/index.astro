@@ -5,19 +5,19 @@ import SolarSystem from '../components/SolarSystem.astro';
 const caseStudies = [
     {
         href: '/work/hills-vet',
-        type: "UX Research & Design",
+        type: "UI/UX Design",
         title: "Hill's Browse by Condition",
-        desc: "Redesigning product discovery for pet owners navigating a vet-recommended food catalog.",
-        image: null,
+        desc: "Helping veterinary professionals find the right nutrition for their pet's specific health condition — without getting lost in a 200+ product catalog.",
+        image: '/assets/hillsvet/hillsvet_cover.jpg',
         gradient: "linear-gradient(135deg, #1a1f35 0%, #0d1a2e 100%)",
     },
     {
         href: '/work/kc-zoo',
-        type: "UX/UI Design",
+        type: "UX Design & Front-end Development",
         title: "Kansas City Zoo Map",
         desc: "An interactive wayfinding map helping visitors explore 202 acres with confidence.",
-        image: null,
-        gradient: "linear-gradient(135deg, #0f2a1f 0%, #0a1a14 100%)",
+        image: '/assets/kczoo/kczoomap_holding.jpeg',
+        gradient: null,
     },
     {
         href: '/work/ihopu',
@@ -103,7 +103,7 @@ const portfolioItems = [
 
     <section class="section__work" id="work">
         <div class="container">
-            <span class="section__label">Selected Work</span>
+            <span class="section__label">Case Studies</span>
 
             <div class="case-studies">
                 {caseStudies.map((cs) => (
@@ -135,7 +135,7 @@ const portfolioItems = [
 
             <hr class="work-divider" />
 
-            <h3 class="work-section-label">More Work</h3>
+            <span class="section__label">Selected Work</span>
 
             {portfolioItems.map((item) => (
                 <div class="portfolio__item">

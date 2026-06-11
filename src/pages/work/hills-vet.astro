@@ -5,25 +5,26 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
 <CaseStudyLayout
     title="Hill's Browse by Condition | Jared Smith"
     projectTitle="Hill's Browse by Condition"
-    type="UX Research & Design"
-    tagline="Helping pet owners find the right nutrition for their pet's specific health condition — without getting lost in a 200+ product catalog."
+    type="UI/UX Design"
+    tagline="Helping veterinary professionals find the right nutrition for their pet's specific health condition — without getting lost in a 200+ product catalog."
     client="Hill's Pet Nutrition"
-    role="Lead UX Designer"
+    role="Lead UI Designer"
     timeline="14 weeks"
-    platform="E-commerce website"
+    platform="Web"
+    coverImage="/assets/hillsvet/hillsvet_cover.jpg"
     nextHref="/work/kc-zoo"
     nextTitle="Kansas City Zoo Map"
 >
     <div class="case-study-section">
-        <span class="case-study-section__label">The Problem</span>
-        <h2 class="case-study-section__title">A catalog built for products, not for people</h2>
+        <span class="case-study-section__label">Overview</span>
+        <h2 class="case-study-section__title">Title needed</h2>
         <div class="case-study-section__body">
-            <p>Hill's Pet Nutrition offers over 200 products across therapeutic and lifestyle formulas. Veterinarians recommend Hill's every day — but when pet owners arrived at the website, they hit a wall. The navigation was organized by product line, not by health concern. A dog owner told by their vet "try Hill's for kidney support" had no clear path forward.</p>
-            <p>Analytics confirmed the friction: users entering with condition-related search terms had a 68% bounce rate from product listing pages. The catalog wasn't working as a discovery tool — it was working as a barrier.</p>
+            <p>Hill's Pet Nutrition operates two parallel web presences: hillspet.com for consumers, and hillsvet.com for veterinary professionals. The vet-facing site is a clinical tool — vets use it to look up therapeutic nutrition options for their patients, compare products, and build feeding plans.</p>
+            <p>The "Browse by Condition" page is one of hillsvet.com's most-used features. It lets veterinary professionals find the right Hill's product based on a patient's primary condition and any concurrent secondary conditions — navigating across both the Prescription Diet and Science Diet product lines. The page needed a full redesign to address usability problems, introduce new features requested by the client, and bring the interface up to modern accessibility standards.</p>
         </div>
     </div>
 
-    <div class="case-study-two-col">
+    <!-- <div class="case-study-two-col">
         <div class="case-study-insight">
             <p class="case-study-insight__number">68%</p>
             <p class="case-study-insight__label">Bounce rate for condition-driven search traffic hitting product listings</p>
@@ -32,63 +33,96 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
             <p class="case-study-insight__number">200+</p>
             <p class="case-study-insight__label">Products in catalog with no condition-first navigation pathway</p>
         </div>
+    </div> -->
+
+    <div class="case-study-image-block">
+        <figure>
+            <img src="/assets/hillsvet/hillsvet_olddesign.jpg" alt="Original browse by condition page" />
+            <figcaption>The pre-redesign browse by condition page</figcaption>
+        </figure>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">Research</span>
-        <h2 class="case-study-section__title">Understanding the pet owner's mental model</h2>
+        <span class="case-study-section__label">The problem</span>
+        <h2 class="case-study-section__title">Gaps in useability</h2>
         <div class="case-study-section__body">
-            <p>Before sketching anything, I needed to understand how pet owners actually think about their pet's food. I ran a mixed-methods research sprint over four weeks.</p>
+            <p>The existing page organized content as a series of top-level accordions — one per condition category — which expanded to reveal a table of co-conditions and their associated product lines. Users had responded positively to the accordion pattern itself, so that wasn't the issue. The problems ran deeper:</p>
             <ul>
-                <li>12 user interviews with pet owners who had received a Hill's recommendation from their vet</li>
-                <li>Competitive analysis of 6 pet nutrition brands and their catalog navigation patterns</li>
-                <li>Card sorting exercise with 24 participants to surface mental models around food categories</li>
-                <li>3 months of on-site search query data analyzed for condition-related terminology</li>
+                <li><strong>Information density without hierarchy.</strong> The table inside each accordion presented sub-conditions and product lines as a flat grid of colored icons. There was no clear visual hierarchy — everything competed equally for attention, making the page hard to scan and slow to use in a clinical setting where time matters.</li>
+                <li><strong>No inline product detail.</strong> Clicking a product line icon navigated away to a separate page to see individual products. Vets had to bounce back and forth to gather the information they needed to make a recommendation.</li>
+                <li><strong>No product comparison.</strong> There was no mechanism to compare products side by side — a common need when advising on nutrition for patients with multiple concurrent conditions.</li>
+                <li><strong>Accessibility failures.</strong> The typography was thin and set against strong background colors throughout, failing WCAG contrast requirements at multiple points in the interface.</li>
             </ul>
-            <p>The central insight: users arrived with a health condition in mind, not a product name. "Kidney disease food," "dental care," "weight management" — these were their entry points. Trust was also paramount — they wanted vet validation surfaced at every step of the journey, not buried in fine print.</p>
         </div>
     </div>
 
-    <div class="case-study-image-block">
+    <!-- <div class="case-study-image-block">
         <div class="placeholder-block"><p>Research synthesis board — placeholder</p></div>
-    </div>
+    </div> -->
 
     <div class="case-study-section">
-        <span class="case-study-section__label">Design Process</span>
-        <h2 class="case-study-section__title">From condition to cart</h2>
+        <span class="case-study-section__label">Planning</span>
+        <h2 class="case-study-section__title">Functional limitations</h2>
         <div class="case-study-section__body">
-            <p>I led three rounds of wireframing — from rough sketches in collaborative workshops with the product and content teams, through low-fidelity flows, to a high-fidelity interactive prototype built in Figma.</p>
-            <p>The core design challenge was hierarchy: how do you surface 8–12 condition categories without overwhelming a user who is already stressed about their pet's health? I tested three distinct navigation treatments before landing on a simple, scannable condition picker that lived as a persistent entry point alongside the existing browse-by-product path.</p>
-            <p>Two rounds of usability testing (6 participants each) validated the approach and surfaced key copy changes — "Kidney Disease" outperformed "Renal Health" by a significant margin in recognition testing.</p>
+            <ul>
+                <li><strong>Preserve the accordion pattern.</strong> Users had adapted to it and liked it. The goal was to fix what was inside, not replace the model.</li>
+                <li><strong>Mobile-first.</strong> Despite the user base skewing desktop, any solution needed to be responsive and usable on mobile.</li>
+                <li><strong>Maintain product line color coding.</strong> Each Hill's product line has a distinct brand color that vets had learned to use as a visual shorthand. That system needed to carry forward.</li>
+                <li><strong>Development constraints.</strong> The comparison feature had to be implementable within the existing development environment — no custom builds.</li>
+            </ul>
         </div>
     </div>
 
     <div class="case-study-image-block">
-        <div class="placeholder-block"><p>Wireframe progressions — placeholder</p></div>
+        <figure>
+            <img src="/assets/hillsvet/hillsvet_newdesign.png" alt="Updated browse by condition page" />
+            <figcaption>The updated browse by condition page with improved useability</figcaption>
+        </figure>
     </div>
 
     <div class="case-study-section">
-        <span class="case-study-section__label">The Solution</span>
-        <h2 class="case-study-section__title">Browse by Condition</h2>
+        <span class="case-study-section__label">Design</span>
+        <h2 class="case-study-section__title">Design decisions</h2>
         <div class="case-study-section__body">
-            <p>A new primary navigation pathway — "Browse by Condition" — that lets users select their pet's health concern and surfaces relevant products with educational context explaining why each formula is recommended. Each condition landing page leads with a brief, vet-authored explanation of the condition, followed by the product recommendations and a prompt to consult their vet.</p>
-            <p>The feature was designed to coexist with the existing catalog, not replace it — respecting the existing user journeys while opening a new front door for the majority of condition-driven traffic.</p>
+            <h3>Sub-accordions with colored spines</h3>
+            <p>The most significant structural change was replacing the flat icon grid inside each top-level accordion with a nested sub-accordion system. Each sub-condition becomes its own expandable row, and expanding it reveals the individual products within that product line — without leaving the page.</p>
+            <p>To preserve the product line color coding that vets relied on, each sub-accordion has a colored vertical spine on its left edge. The spine is always visible regardless of whether the accordion is open or closed, giving users persistent color context as they navigate. This kept the color-as-signal system intact while integrating it into a more useful structural format.</p>
+            <h3>Inline product cards</h3>
+            <p>With sub-accordions in place, individual products could be surfaced directly within the page. Each product entry shows the product name and image, and includes a checkbox for comparison and a direct link to the feeding plan. Vets get the information they need without navigating away.</p>
+            <h3>Comparison sidebar</h3>
+            <p>To support product comparison without requiring a separate page, a sticky sidebar panel tracks selected products. Users can check up to three products from anywhere on the page, then trigger a modal with a side-scrolling comparison table. Given the development constraints, this was the lowest-friction path to a working comparison feature — and it keeps the comparison action always visible without disrupting the browsing flow.</p>
+            <h3>Typography and accessibility</h3>
+            <p>The previous interface used thin type weights set against heavily saturated background colors, creating contrast failures throughout. The redesign reworked the type system to meet WCAG AA compliance across all text and interactive elements, with improved weight selection and better color pairings.</p>
         </div>
     </div>
 
     <div class="case-study-image-block">
-        <div class="placeholder-block"><p>Final design — Browse by Condition UI — placeholder</p></div>
+        <figure>
+            <video controls src="/assets/hillsvet/hillsvet_comparedemo.mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Comparison demo video showing the updated browse by condition page</figcaption>
+        </figure>
     </div>
 
+    <!-- <div class="case-study-section">
+        <span class="case-study-section__label">Before and After</span>
+        <h2 class="case-study-section__title">Comparing the old and new interfaces</h2>
+        <div class="case-study-section__body">
+            <p>The original interface presented a wall of colored icons inside each accordion — dense, flat, and requiring users to click out to another page to see any product detail. Strong background colors dominated entire sections without contributing to hierarchy.</p>
+            <p>The redesigned interface uses the same accordion structure but reorganizes what lives inside it. Conditions unfold into clearly labeled sub-accordions. Product lines are identifiable by their spine color before you even open them. Individual products are visible in context. The comparison tool is always a sidebar away.</p>
+        </div>
+    </div> -->
+
     <div class="case-study-section">
-        <span class="case-study-section__label">Results</span>
+        <span class="case-study-section__label">Outcome</span>
         <h2 class="case-study-section__title">Measurably less friction, measurably more confidence</h2>
         <div class="case-study-section__body">
-            <p>After launch, the condition-based entry path became the highest-performing acquisition route for new users within six weeks.</p>
+            <p>The redesign shipped to a positive response from both the Hill's team and the veterinary professionals using the tool. The inline product detail reduced the back-and-forth that had slowed the previous experience, and the comparison feature addressed a gap that had existed in the tool for years. The colored spine system successfully carried the product line color language forward into the new format without losing the visual shorthand vets had built around it. The client was confident the page would continue to be a primary reference tool for their customers.</p>
         </div>
     </div>
 
-    <div class="case-study-two-col">
+    <!-- <div class="case-study-two-col">
         <div class="case-study-insight">
             <p class="case-study-insight__number">31%</p>
             <p class="case-study-insight__label">Reduction in bounce rate from product catalog for condition-driven traffic</p>
@@ -97,5 +131,5 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
             <p class="case-study-insight__number">22%</p>
             <p class="case-study-insight__label">Increase in add-to-cart from condition-based entry paths</p>
         </div>
-    </div>
+    </div> -->
 </CaseStudyLayout>
