@@ -679,6 +679,7 @@ a {
         flex-flow: row nowrap;
         align-items: center;
         & > * { flex-basis: 50%; }
+        max-width: 80%;
     }
     .portfolio__heading {
         display: flex;
@@ -787,7 +788,7 @@ a {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        @include fluidSize(font-size, 10px, 12px);
+        @include fluidSize(font-size, 12px, 14px);
         text-transform: uppercase;
         letter-spacing: 0.2em;
         font-weight: 700;
@@ -799,7 +800,7 @@ a {
     }
 
     &__type {
-        @include fluidSize(font-size, 9px, 11px);
+        @include fluidSize(font-size, 12px, 14px);
         text-transform: uppercase;
         letter-spacing: 0.3em;
         font-weight: 700;
@@ -840,7 +841,7 @@ a {
 
     &__item {
         &__label {
-            @include fluidSize(font-size, 9px, 10px);
+            @include fluidSize(font-size, 12px, 14px);
             text-transform: uppercase;
             letter-spacing: 0.25em;
             color: $black-lll;
@@ -849,7 +850,7 @@ a {
             display: block;
         }
         &__value {
-            @include fluidSize(font-size, 13px, 15px);
+            @include fluidSize(font-size, 16px, 20px);
             font-weight: 700;
             color: $white;
             margin: 0;
@@ -968,7 +969,7 @@ a {
     }
 
     &__label {
-        @include fluidSize(font-size, 13px, 15px);
+        @include fluidSize(font-size, 16px, 24px);
         color: $grey-d;
         margin: 0;
         line-height: 1.4;

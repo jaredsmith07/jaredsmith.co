@@ -8,7 +8,7 @@ interface Props {
     tagline: string;
     client: string;
     role: string;
-    timeline: string;
+    date: string;
     platform: string;
     coverImage?: string;
     nextHref: string;
@@ -22,7 +22,7 @@ const {
     tagline,
     client,
     role,
-    timeline,
+    date,
     platform,
     coverImage,
     nextHref,
@@ -54,8 +54,8 @@ const {
                 <p class="case-study-meta__item__value">{role}</p>
             </div>
             <div class="case-study-meta__item">
-                <span class="case-study-meta__item__label">Timeline</span>
-                <p class="case-study-meta__item__value">{timeline}</p>
+                <span class="case-study-meta__item__label">Date</span>
+                <p class="case-study-meta__item__value">{date}</p>
             </div>
             <div class="case-study-meta__item">
                 <span class="case-study-meta__item__label">Platform</span>
